@@ -1,0 +1,7 @@
+D:\Projetos\PIM\DAL\bin\Debug\DAL.dll
+D:\Projetos\PIM\DAL\bin\Debug\DAL.pdb
+D:\Projetos\PIM\DAL\bin\Debug\Model.dll
+D:\Projetos\PIM\DAL\bin\Debug\Model.pdb
+D:\Projetos\PIM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Projetos\PIM\DAL\obj\Debug\DAL.dll
+D:\Projetos\PIM\DAL\obj\Debug\DAL.pdb

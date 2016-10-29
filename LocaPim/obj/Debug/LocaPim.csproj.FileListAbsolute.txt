@@ -1,0 +1,6 @@
+D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.csprojResolveAssemblyReference.cache
+D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.Cadastro.frmCadastroUsuario.resources
+D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.FrmMain.resources
+D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.Login.Login.resources
+D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.Properties.Resources.resources
+D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.csproj.GenerateResource.Cache

@@ -1,0 +1,4 @@
+D:\Projetos\PIM\Model\bin\Debug\Model.dll
+D:\Projetos\PIM\Model\bin\Debug\Model.pdb
+D:\Projetos\PIM\Model\obj\Debug\Model.dll
+D:\Projetos\PIM\Model\obj\Debug\Model.pdb

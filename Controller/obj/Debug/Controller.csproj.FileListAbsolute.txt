@@ -1,0 +1,9 @@
+D:\Projetos\PIM\Controller\bin\Debug\Controller.dll
+D:\Projetos\PIM\Controller\bin\Debug\Controller.pdb
+D:\Projetos\PIM\Controller\bin\Debug\DAL.dll
+D:\Projetos\PIM\Controller\bin\Debug\Model.dll
+D:\Projetos\PIM\Controller\bin\Debug\DAL.pdb
+D:\Projetos\PIM\Controller\bin\Debug\Model.pdb
+D:\Projetos\PIM\Controller\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+D:\Projetos\PIM\Controller\obj\Debug\Controller.dll
+D:\Projetos\PIM\Controller\obj\Debug\Controller.pdb

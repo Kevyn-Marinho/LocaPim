@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Model.Carro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Master/_Administrativo.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <button id="btnNovoCarro" class="btn btn-default" >Novo</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCarro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chassi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFabricacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAquisicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Locado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorDiaria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCarro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chassi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFabricacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAquisicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Locado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorDiaria)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<div class="modal" id="modal">
+
+</div>
+
+
+<script>
+    $(function () {
+        $('#btnNovoCarro').click(function () {
+            $("#modal").load("Carro/Criar");
+            $('#modal').modal('show');
+        })
+    });
+
+</script>
+

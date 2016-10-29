@@ -1,0 +1,58 @@
+﻿@model Model.Carro
+
+<fieldset>
+    <legend>Carro</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdCarro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdCarro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Chassi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Chassi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Placa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Placa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataFabricacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataFabricacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataAquisicao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataAquisicao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Locado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Locado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorDiaria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorDiaria)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
