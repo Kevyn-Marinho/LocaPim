@@ -5,13 +5,13 @@ using System.Text;
 using System.Data.SqlClient;
 using Model;
 
-namespace DAL
+namespace Dao
 {
-    public class LocacaoDAO
+    public class LocacaoDao
     {
         private Locacao locacao;
 
-        public LocacaoDAO(Locacao locacao)
+        public LocacaoDao(Locacao locacao)
         {
             this.locacao = locacao;    
         }

@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -103,9 +104,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
+    <ProjectReference Include="..\Controller\Business.csproj">
       <Project>{439c919a-0e3a-4620-af85-ad5890930bbc}</Project>
-      <Name>Controller</Name>
+      <Name>Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{921aaeb5-85fa-4260-9216-5fd8e00eea74}</Project>

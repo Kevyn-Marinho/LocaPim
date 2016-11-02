@@ -5,22 +5,22 @@ using System.Text;
 using System.Data.SqlClient;
 using Model;
 
-namespace DAL
+namespace Dao
 {
-    public class CarroDAO : IDao
+    public class CarroDao : IDao
     {
         private Carro carro;
 
-        public CarroDAO()
+        public CarroDao()
             : this(new Carro()) { }
         
 
-        public CarroDAO(Carro carro) 
+        public CarroDao(Carro carro) 
         {
             this.carro = carro;
         }
 
-        public void Incluir() 
+        public void Adicionar() 
         {
             Conexao conexao = new Conexao();
             SqlConnection conn;
@@ -58,12 +58,12 @@ namespace DAL
 
         }
         
-        public void Alterar()
+        public void Editar()
         {
             throw new NotImplementedException();
         }
 
-        public void Excluir()
+        public void Excluir(int idCarro)
         {
             throw new NotImplementedException();
         }

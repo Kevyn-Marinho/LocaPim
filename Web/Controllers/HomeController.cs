@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Controller;
+using Business;
 using Model;
 namespace WebView.Controllers
 {
@@ -14,7 +14,7 @@ namespace WebView.Controllers
 
         public ActionResult Index()
         {
-            FuncionarioController funcionario = new FuncionarioController ();
+            FuncionarioCtl funcionario = new FuncionarioCtl ();
             IList<Funcionario> func;
             func = funcionario.Listar();
             
