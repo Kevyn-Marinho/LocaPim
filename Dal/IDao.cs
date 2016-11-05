@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Dao
 {
-    interface IDao 
+    interface IDao<T> 
     {
-        void Adicionar();
-        void Editar();
-        void Excluir(int id);
+        void Adicionar(T Obj);
+        void SaveChanges();
+        void Excluir(T Obj);
+        IList<T> Listar();
     }
 }

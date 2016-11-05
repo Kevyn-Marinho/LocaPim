@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
+using System.Data.Entity;
 using Model;
 
 namespace Dao
 {
-    public class LocacaoDao : IDao<Locacao>
+    public class PaisDao : IDao<Pais>
     {
         private EntidadesContext contexto;
-        public LocacaoDao()
+        public PaisDao()
         {
             this.contexto = new EntidadesContext();
         }
 
-        public void Adicionar(Locacao locacao)
+        public void Adicionar(Pais pais)
         {
-            contexto.Locacoes.Add(locacao);
+            contexto.Paises.Add(pais);
         }
 
         public void SaveChanges()
@@ -25,14 +25,13 @@ namespace Dao
             contexto.SaveChanges();
         }
 
-        public void Excluir(Locacao locacao)
+        public void Excluir(Pais pais)
         {
-            contexto.Locacoes.Remove(locacao);
+            contexto.Paises.Add(pais);
         }
-
-        public IList<Locacao> Listar()
+        public IList<Pais> Listar()
         {
-            return contexto.Locacoes.ToList();
+            return contexto.Paises.ToList();
         }
     }
 }

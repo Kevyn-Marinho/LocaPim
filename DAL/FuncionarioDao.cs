@@ -2,22 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 using Model;
-
 namespace Dao
 {
-    public class LocacaoDao : IDao<Locacao>
+    public class FuncionarioDao : IDao<Funcionario>
     {
         private EntidadesContext contexto;
-        public LocacaoDao()
+
+        public FuncionarioDao()
         {
             this.contexto = new EntidadesContext();
         }
-
-        public void Adicionar(Locacao locacao)
+        public void Adicionar(Funcionario funcionario)
         {
-            contexto.Locacoes.Add(locacao);
+            contexto.Funcionarios.Add(funcionario);
         }
 
         public void SaveChanges()
@@ -25,14 +23,14 @@ namespace Dao
             contexto.SaveChanges();
         }
 
-        public void Excluir(Locacao locacao)
+        public void Excluir(Funcionario funcionario)
         {
-            contexto.Locacoes.Remove(locacao);
+            contexto.Funcionarios.Remove(funcionario);
         }
 
-        public IList<Locacao> Listar()
+        public IList<Funcionario> Listar()
         {
-            return contexto.Locacoes.ToList();
+           return contexto.Funcionarios.ToList();
         }
     }
 }

@@ -6,135 +6,30 @@ using System.Data.SqlClient;
 using Model;
 namespace Dao
 {
-    public class SetorDao : IDao
+    public class SetorDao : IDao<Setor>
     {
-        private Setor setor;
+        private EntidadesContext contexto; 
 
-        public SetorDao(Setor setor)
-        {
-            this.setor = setor;
-        }
         public SetorDao()
-            : this(new Setor())
         {
+            this.contexto = new EntidadesContext();
         }
-
-        public void Adicionar(){
-            
-            Conexao conexao = new Conexao();
-            SqlConnection conn;
-            
-            SqlCommand cmd = new SqlCommand("INSERT INTO TBSETOR (CNMNOME,CDSDESCRICAO) VALUES(@NOME,@DESCRICAO)");
-            cmd.Parameters.AddWithValue("@NOME", setor.Nome);
-            cmd.Parameters.AddWithValue("@DESCRICAO", setor.Descricao);
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandTimeout = 500;
-
-            try
-            {
-                conn = conexao.AbrirConexao();
-                conn.Open();
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
-                conexao.FecharConexao(conn);
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
-        }
-
-        public void Editar()
+        public void Adicionar(Setor setor)
         {
-            Conexao conexao = new Conexao();
-            SqlConnection conn;
 
-            SqlCommand cmd = new SqlCommand("UPDATE TBSETOR SET CNMNOME = @NOME ,CDSDESCRICAO= @DESCRICAO "+
-                                            "WHERE NCDIDSETOR = @NCDIDSETOR");
-            cmd.Parameters.AddWithValue("@NOME", setor.Nome);
-            cmd.Parameters.AddWithValue("@DESCRICAO", setor.Descricao);
-            cmd.Parameters.AddWithValue("@NCDIDSETOR", setor.IdSetor);
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandTimeout = 500;
-
-            try
-            {
-                conn = conexao.AbrirConexao();
-                conn.Open();
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
-                conexao.FecharConexao(conn);
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
+            contexto.Setores.Add(setor);
         }
-
-        public void Excluir(int idSetor)
+        public void SaveChanges()
         {
-            Conexao conexao = new Conexao();
-            SqlConnection conn;
-
-            SqlCommand cmd = new SqlCommand("DELETE FROM TBSETOR WHERE NCDIDSETOR = @NCDIDSETOR");
-            cmd.Parameters.AddWithValue("@NCDIDSETOR", idSetor);
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandTimeout = 500;
-
-            try
-            {
-                conn = conexao.AbrirConexao();
-                conn.Open();
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
-                conexao.FecharConexao(conn);
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
+            contexto.SaveChanges();
+        }
+        public void Excluir(Setor setor)
+        {
+            contexto.Setores.Remove(setor);
         }
         public IList<Setor> Listar()
         {
-            IList<Setor> setores = new List<Setor>();
-            SqlDataReader reader;
-            
-            Conexao conexao = new Conexao();
-            SqlConnection conn;
-
-            SqlCommand cmd = new SqlCommand("SELECT	NCDIDSETOR,CNMNOME,CDSDESCRICAO FROM TBSETOR");
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandTimeout = 500;
-            
-            try
-            {
-                conn = conexao.AbrirConexao();
-                conn.Open();
-                cmd.Connection = conn;
-                
-                reader = cmd.ExecuteReader();
-                
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        Setor setor = new Setor();
-                        setor.IdSetor = int.Parse(reader["NCDIDSETOR"].ToString());
-                        setor.Nome = reader["CNMNOME"].ToString();
-                        setor.Descricao = reader["CDSDESCRICAO"].ToString();
-                        setores.Add(setor);
-                    }
-                }
-                conexao.FecharConexao(conn);
-                
-                return setores;
-
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
-
+            return contexto.Setores.ToList();
         }
 
     }
