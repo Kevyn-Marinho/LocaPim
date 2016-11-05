@@ -31,10 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -61,107 +63,18 @@
     <Compile Include="Estado.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Locacao.cs" />
-    <Compile Include="MarcaCarro.cs" />
+    <Compile Include="Marca.cs" />
     <Compile Include="ModeloCarro.cs" />
-    <Compile Include="ModeloDeDados.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloDeDados.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModeloDeDados.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModeloDeDados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloDeDados.edmx</DependentUpon>
-    </Compile>
     <Compile Include="OperadoraCartao.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setor.cs" />
-    <Compile Include="TBCARGO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCARRO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCARTAODECREDITO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCATEGORIACARRO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCIDADE.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCLIENTE.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCONTATO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBCOR.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBENDERECO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBESTADO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBFUNCIONARIO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBLOCACAO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBMARCACARRO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBMODELOCARRO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBOPERADORACARTAO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBPAIS.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBSETOR.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBTIPOCONTATO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBUSUARIO.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
     <Compile Include="TipoDeContato.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="ModeloDeDados.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModeloDeDados.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ModeloDeDados.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloDeDados.edmx</DependentUpon>
-      <LastGenOutput>ModeloDeDados.Context.cs</LastGenOutput>
-    </None>
-    <None Include="ModeloDeDados.edmx.diagram">
-      <DependentUpon>ModeloDeDados.edmx</DependentUpon>
-    </None>
-    <None Include="ModeloDeDados.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloDeDados.edmx</DependentUpon>
-      <LastGenOutput>ModeloDeDados.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

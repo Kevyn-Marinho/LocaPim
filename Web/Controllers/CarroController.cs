@@ -17,7 +17,7 @@ namespace WebView.Controllers
         {
             Business.CarroCtl carro = new Business.CarroCtl();
             
-            return View(carro.ListaFrota());
+            return View(carro.Listar());
         }
 
         //GET

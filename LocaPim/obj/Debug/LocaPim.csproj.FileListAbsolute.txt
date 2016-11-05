@@ -1,10 +1,16 @@
 D:\Projetos\PIM\LocaPim\bin\Debug\LocaPim.exe
 D:\Projetos\PIM\LocaPim\bin\Debug\LocaPim.pdb
+D:\Projetos\PIM\LocaPim\bin\Debug\Business.dll
 D:\Projetos\PIM\LocaPim\bin\Debug\MetroFramework.Design.dll
 D:\Projetos\PIM\LocaPim\bin\Debug\MetroFramework.dll
 D:\Projetos\PIM\LocaPim\bin\Debug\MetroFramework.Fonts.dll
 D:\Projetos\PIM\LocaPim\bin\Debug\Model.dll
+D:\Projetos\PIM\LocaPim\bin\Debug\Dao.dll
+D:\Projetos\PIM\LocaPim\bin\Debug\EntityFramework.dll
+D:\Projetos\PIM\LocaPim\bin\Debug\Business.pdb
 D:\Projetos\PIM\LocaPim\bin\Debug\Model.pdb
+D:\Projetos\PIM\LocaPim\bin\Debug\Dao.pdb
+D:\Projetos\PIM\LocaPim\bin\Debug\EntityFramework.xml
 D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.csprojResolveAssemblyReference.cache
 D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.Cadastro.frmCadastroUsuario.resources
 D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.FrmMain.resources
@@ -13,7 +19,3 @@ D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.Properties.Resources.resources
 D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.csproj.GenerateResource.Cache
 D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.exe
 D:\Projetos\PIM\LocaPim\obj\Debug\LocaPim.pdb
-D:\Projetos\PIM\LocaPim\bin\Debug\Business.dll
-D:\Projetos\PIM\LocaPim\bin\Debug\Dao.dll
-D:\Projetos\PIM\LocaPim\bin\Debug\Business.pdb
-D:\Projetos\PIM\LocaPim\bin\Debug\Dao.pdb

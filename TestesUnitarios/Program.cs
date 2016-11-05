@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Dao;
+using Model;
 namespace TestesUnitarios
 {
     class Program
     {
         static void Main(string[] args)
         {
-            SetorTest setorTest = new SetorTest();
-            setorTest.Adicionar();
-            //setorTest.Editar();
-            //setorTest.Excluir();
-            setorTest.Listar();
+            Pais pais = new Pais()
+            {
+                Nome = "Brasil"
+            };
+            Estado estado = new Estado()
+            {
+                Pais = pais,
+                Sigla = "SP",
+                Uf = "São Paulo"
+            };
 
-            //CargoTest cargoTest = new CargoTest();
-            //cargoTest.Adicionar();
-            //cargoTest.Editar();
-            //cargoTest.Listar();
+            var paisDao = new PaisDao();
+            paisDao.Adicionar(pais);
 
-
-            //FuncionarioTest funcionarioTest = new FuncionarioTest();
-            //funcionarioTest.Adiciona();
-            //funcionarioTest.Listar();
-            //Console.ReadKey();
-            //funcionarioTest.Alterar();
-            //funcionarioTest.Listar();
+            var estadoDao = new EstadoDao();
+            estadoDao.Adicionar(estado);
+            estadoDao.SaveChanges();
+            paisDao.Listar();
+            estadoDao.Listar();
             
+            
+
             Console.ReadLine();
         }
     }

@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
+    [Table("Cargos")]
     public class Cargo
     {
+        [Key]
         public  int IdCargo { get; set; }
         public string Descricao { get; set; }
         public string Nome { get; set; }
-        public Setor Setor { get; set; }
         public bool Ativo { get; set; }
-
+        public virtual Setor Setor { get; set; }
+        public int IdSetor { get; set; }
 
         public override string ToString()
         {

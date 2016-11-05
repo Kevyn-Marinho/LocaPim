@@ -15,10 +15,11 @@ namespace Business
 
             if (maior && carteiraDefinitiva && !locacao.Carro.Locado)
             {
-                LocacaoDao dao = new LocacaoDao(locacao);
+                LocacaoDao dao = new LocacaoDao();
                 try
                 {
-                    dao.RealizaLocacao();
+                   
+                    dao.Adicionar(locacao);
                 } catch(Exception ex)
                 {
                     throw new Exception("Não foi possível realizar sua locação, por favor tente novamente mais tarde!\n" + 

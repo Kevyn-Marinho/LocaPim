@@ -14,9 +14,7 @@ namespace Model
         public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Ativo { get; set; }
-        public bool Funcionario { get; set; }
-        public bool Cliente { get; set; }
-
+   
 
     }   
 }

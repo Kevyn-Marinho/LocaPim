@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
     public class ModeloCarro
     {
-        public ModeloCarro() :this(new MarcaCarro()){ }
-
-        public ModeloCarro(MarcaCarro marca) :this(marca,new CategoriaCarro()) {}
-
-        public ModeloCarro(MarcaCarro marca, CategoriaCarro categoria)
-        {
-            this.IdModeloCarro = 1;
-            this.Marca = marca;
-            this.Categoria = categoria;
-        }
+        
+        [Key]
         public int IdModeloCarro { get; set; }
+        [Required]
         public string Nome { get; set; }
-        public MarcaCarro Marca { get; set; }
+        public Marca Marca { get; set; }
+        [Required]
+        public int IdMarca { get; set; }        
         public CategoriaCarro Categoria { get; set; }
+        [Required]
+        public int IdCategoria { get; set; }
     }
 }

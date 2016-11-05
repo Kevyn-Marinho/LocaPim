@@ -31,7 +31,6 @@ D:\Projetos\PIM\MvcApplication1\bin\WebView.pdb
 D:\Projetos\PIM\MvcApplication1\obj\Debug\WebView.dll
 D:\Projetos\PIM\MvcApplication1\obj\Debug\WebView.pdb
 D:\Projetos\PIM\Web\obj\Debug\WebView.csprojResolveAssemblyReference.cache
-D:\Projetos\PIM\Web\obj\Debug\WebView.dll
 D:\Projetos\PIM\Web\bin\WebView.dll.config
 D:\Projetos\PIM\Web\bin\WebView.dll
 D:\Projetos\PIM\Web\bin\WebView.pdb
@@ -49,6 +48,7 @@ D:\Projetos\PIM\Web\bin\System.Web.WebPages.Deployment.dll
 D:\Projetos\PIM\Web\bin\System.Web.WebPages.dll
 D:\Projetos\PIM\Web\bin\System.Web.WebPages.Razor.dll
 D:\Projetos\PIM\Web\bin\Dao.dll
+D:\Projetos\PIM\Web\bin\EntityFramework.dll
 D:\Projetos\PIM\Web\bin\Business.pdb
 D:\Projetos\PIM\Web\bin\Model.pdb
 D:\Projetos\PIM\Web\bin\Newtonsoft.Json.xml
@@ -61,4 +61,6 @@ D:\Projetos\PIM\Web\bin\System.Web.WebPages.xml
 D:\Projetos\PIM\Web\bin\System.Web.WebPages.Deployment.xml
 D:\Projetos\PIM\Web\bin\System.Web.WebPages.Razor.xml
 D:\Projetos\PIM\Web\bin\Dao.pdb
+D:\Projetos\PIM\Web\bin\EntityFramework.xml
+D:\Projetos\PIM\Web\obj\Debug\WebView.dll
 D:\Projetos\PIM\Web\obj\Debug\WebView.pdb

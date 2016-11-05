@@ -5,6 +5,5 @@ D:\Projetos\PIM\Model\bin\Debug\EntityFramework.dll
 D:\Projetos\PIM\Model\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projetos\PIM\Model\bin\Debug\EntityFramework.xml
 D:\Projetos\PIM\Model\bin\Debug\EntityFramework.SqlServer.xml
-D:\Projetos\PIM\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\Projetos\PIM\Model\obj\Debug\Model.dll
 D:\Projetos\PIM\Model\obj\Debug\Model.pdb
