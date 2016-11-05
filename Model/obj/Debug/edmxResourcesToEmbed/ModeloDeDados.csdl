@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBPIMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBCARGO">
+    <Key>
+      <PropertyRef Name="NCDIDCARGO" />
+    </Key>
+    <Property Name="NCDIDCARGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMNOME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CDSDESCRICAO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="NCDIDSETOR" Type="Int32" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <NavigationProperty Name="TBFUNCIONARIO" Relationship="Self.FK_NCDIDCARGO_TBFUNCIONARIO" FromRole="TBCARGO" ToRole="TBFUNCIONARIO" />
+    <NavigationProperty Name="TBSETOR" Relationship="Self.FK_NCDIDSETOR_TBSETOR" FromRole="TBCARGO" ToRole="TBSETOR" />
+  </EntityType>
+  <EntityType Name="TBCARRO">
+    <Key>
+      <PropertyRef Name="NCDIDCARRO" />
+    </Key>
+    <Property Name="NCDIDCARRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CCDCHASSI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CCDPLACA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DDTDATAFABRICACAO" Type="DateTime" Precision="3" />
+    <Property Name="DDTDATAAQUISICAO" Type="DateTime" Precision="3" />
+    <Property Name="NNRQTDEDELOCACOES" Type="Int32" />
+    <Property Name="NCDIDCORCARRO" Type="Int32" />
+    <Property Name="NCDIDMODELOCARRO" Type="Int32" />
+    <Property Name="BIDLOCADO" Type="Boolean" />
+    <Property Name="NVLDIARIA" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="TBLOCACAO" Relationship="Self.FK_NCDIDCARRO_TBLOCACAO" FromRole="TBCARRO" ToRole="TBLOCACAO" />
+    <NavigationProperty Name="TBCOR" Relationship="Self.FK_NCDIDCORCARRO_TBCARRO" FromRole="TBCARRO" ToRole="TBCOR" />
+    <NavigationProperty Name="TBMODELOCARRO" Relationship="Self.FK_NCDIDMODELOCARRO_TBCARRO" FromRole="TBCARRO" ToRole="TBMODELOCARRO" />
+  </EntityType>
+  <EntityType Name="TBCARTAODECREDITO">
+    <Key>
+      <PropertyRef Name="NCDIDCARTAO" />
+    </Key>
+    <Property Name="NCDIDCARTAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NCDIDOPERADORACARTAO" Type="Int32" />
+    <Property Name="CCDRCARTAO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NNRCODIGO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DDTVALIDADE" Type="DateTime" Precision="3" />
+    <Property Name="CNMNOMECARTAO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <Property Name="NCDIDCLIENTE" Type="Int32" />
+    <NavigationProperty Name="TBOPERADORACARTAO" Relationship="Self.FK_NCDIDBANDEIRACARTAO_TBCARTAODECREDITO" FromRole="TBCARTAODECREDITO" ToRole="TBOPERADORACARTAO" />
+    <NavigationProperty Name="TBLOCACAO" Relationship="Self.FK_NCDIDCARTAO_TBLOCACAO" FromRole="TBCARTAODECREDITO" ToRole="TBLOCACAO" />
+    <NavigationProperty Name="TBCLIENTE" Relationship="Self.FK_NCDIDCLIENTE_TBCARTAODECREDITO" FromRole="TBCARTAODECREDITO" ToRole="TBCLIENTE" />
+  </EntityType>
+  <EntityType Name="TBCATEGORIACARRO">
+    <Key>
+      <PropertyRef Name="NCDIDCATEGORIACARRO" />
+    </Key>
+    <Property Name="NCDIDCATEGORIACARRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMCATEGORIACARRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CDSDESCRICAO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBMODELOCARRO" Relationship="Self.FK_NCDICATEGORIACARRO_TBMODELOCARRO" FromRole="TBCATEGORIACARRO" ToRole="TBMODELOCARRO" />
+  </EntityType>
+  <EntityType Name="TBCIDADE">
+    <Key>
+      <PropertyRef Name="NCDIDCIDADE" />
+    </Key>
+    <Property Name="NCDIDCIDADE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSCIDADE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NCDIDESTADO" Type="Int32" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <NavigationProperty Name="TBENDERECO" Relationship="Self.FK_NCDIDCIDADE_TBENDERECO" FromRole="TBCIDADE" ToRole="TBENDERECO" />
+    <NavigationProperty Name="TBESTADO" Relationship="Self.FK_NCDIDESTADO_TBCIDADE" FromRole="TBCIDADE" ToRole="TBESTADO" />
+  </EntityType>
+  <EntityType Name="TBCLIENTE">
+    <Key>
+      <PropertyRef Name="NCDIDCLIENTE" />
+    </Key>
+    <Property Name="NCDIDCLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMNOME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CNMSOBRENOME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CDSRG" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CDSCPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DDTNASCIMENTO" Type="DateTime" Precision="3" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <Property Name="CCDCNH" Type="Int64" />
+    <Property Name="DDTEMISSAO" Type="DateTime" Precision="3" />
+    <Property Name="DDTVENCIMENTO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBCARTAODECREDITO" Relationship="Self.FK_NCDIDCLIENTE_TBCARTAODECREDITO" FromRole="TBCLIENTE" ToRole="TBCARTAODECREDITO" />
+  </EntityType>
+  <EntityType Name="TBCONTATO">
+    <Key>
+      <PropertyRef Name="NCDIDCONTATO" />
+    </Key>
+    <Property Name="NCDIDCONTATO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NCDIDTIPOCONTATO" Type="Int32" />
+    <Property Name="CDSTELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <NavigationProperty Name="TBTIPOCONTATO" Relationship="Self.FK_NNRIDTIPOCONTATO_TBCONTATO" FromRole="TBCONTATO" ToRole="TBTIPOCONTATO" />
+  </EntityType>
+  <EntityType Name="TBCOR">
+    <Key>
+      <PropertyRef Name="NCDIDCOR" />
+    </Key>
+    <Property Name="NCDIDCOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSCOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBCARRO" Relationship="Self.FK_NCDIDCORCARRO_TBCARRO" FromRole="TBCOR" ToRole="TBCARRO" />
+  </EntityType>
+  <EntityType Name="TBENDERECO">
+    <Key>
+      <PropertyRef Name="NCDIDENDEDERECO" />
+    </Key>
+    <Property Name="NCDIDENDEDERECO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSLOGRADOURO" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+    <Property Name="NNRNUMERO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CDSCOMPLEMENTO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NCDIDCIDADE" Type="Int32" />
+    <NavigationProperty Name="TBCIDADE" Relationship="Self.FK_NCDIDCIDADE_TBENDERECO" FromRole="TBENDERECO" ToRole="TBCIDADE" />
+  </EntityType>
+  <EntityType Name="TBESTADO">
+    <Key>
+      <PropertyRef Name="NCDIDESTADO" />
+    </Key>
+    <Property Name="NCDIDESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSUF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CDSSIGLA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NCDIDPAIS" Type="Int32" />
+    <NavigationProperty Name="TBCIDADE" Relationship="Self.FK_NCDIDESTADO_TBCIDADE" FromRole="TBESTADO" ToRole="TBCIDADE" />
+    <NavigationProperty Name="TBPAIS" Relationship="Self.FK_NCDIDPAIS_TBESTADO" FromRole="TBESTADO" ToRole="TBPAIS" />
+  </EntityType>
+  <EntityType Name="TBFUNCIONARIO">
+    <Key>
+      <PropertyRef Name="NCDIDFUNCIONARIO" />
+    </Key>
+    <Property Name="NCDIDFUNCIONARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMNOME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CNMSOBRENOME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CDSRG" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CDSCPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DDTNASCIMENTO" Type="DateTime" Precision="3" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <Property Name="NCDIDCARGO" Type="Int32" />
+    <NavigationProperty Name="TBCARGO" Relationship="Self.FK_NCDIDCARGO_TBFUNCIONARIO" FromRole="TBFUNCIONARIO" ToRole="TBCARGO" />
+    <NavigationProperty Name="TBUSUARIO" Relationship="Self.FK_NCDIDFUNCIONARIO_TBUSUARIO" FromRole="TBFUNCIONARIO" ToRole="TBUSUARIO" />
+  </EntityType>
+  <EntityType Name="TBLOCACAO">
+    <Key>
+      <PropertyRef Name="NCDIDLOCACAO" />
+    </Key>
+    <Property Name="NCDIDLOCACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NCDIDUSUARIO" Type="Int32" />
+    <Property Name="DDTLOCACAO" Type="DateTime" Precision="3" />
+    <Property Name="NVLLOCACAO" Type="Decimal" Precision="30" Scale="4" />
+    <Property Name="DDTDEVOLUCAO" Type="DateTime" Precision="3" />
+    <Property Name="NCDIDCARTAO" Type="Int32" />
+    <Property Name="NCDIDCARRO" Type="Int32" />
+    <NavigationProperty Name="TBCARRO" Relationship="Self.FK_NCDIDCARRO_TBLOCACAO" FromRole="TBLOCACAO" ToRole="TBCARRO" />
+    <NavigationProperty Name="TBCARTAODECREDITO" Relationship="Self.FK_NCDIDCARTAO_TBLOCACAO" FromRole="TBLOCACAO" ToRole="TBCARTAODECREDITO" />
+    <NavigationProperty Name="TBUSUARIO" Relationship="Self.FK_NCDIDUSUARIO_TBLOCACAO" FromRole="TBLOCACAO" ToRole="TBUSUARIO" />
+  </EntityType>
+  <EntityType Name="TBMARCACARRO">
+    <Key>
+      <PropertyRef Name="NCDIDMARCACARRO" />
+    </Key>
+    <Property Name="NCDIDMARCACARRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMMARCACARRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CDSDESCRICAO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBMODELOCARRO" Relationship="Self.FK_NCDIDMARCACARRO_TBMODELOCARRO" FromRole="TBMARCACARRO" ToRole="TBMODELOCARRO" />
+  </EntityType>
+  <EntityType Name="TBMODELOCARRO">
+    <Key>
+      <PropertyRef Name="NCDIDMODELOCARRO" />
+    </Key>
+    <Property Name="NCDIDMODELOCARRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSMODELOCARRO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NCDIDMARCACARRO" Type="Int32" />
+    <Property Name="NCDIDCATEGORIACARRO" Type="Int32" />
+    <NavigationProperty Name="TBCARRO" Relationship="Self.FK_NCDIDMODELOCARRO_TBCARRO" FromRole="TBMODELOCARRO" ToRole="TBCARRO" />
+    <NavigationProperty Name="TBCATEGORIACARRO" Relationship="Self.FK_NCDICATEGORIACARRO_TBMODELOCARRO" FromRole="TBMODELOCARRO" ToRole="TBCATEGORIACARRO" />
+    <NavigationProperty Name="TBMARCACARRO" Relationship="Self.FK_NCDIDMARCACARRO_TBMODELOCARRO" FromRole="TBMODELOCARRO" ToRole="TBMARCACARRO" />
+  </EntityType>
+  <EntityType Name="TBOPERADORACARTAO">
+    <Key>
+      <PropertyRef Name="NCDIDOPERADORACARTAO" />
+    </Key>
+    <Property Name="NCDIDOPERADORACARTAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSBANDEIRA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <NavigationProperty Name="TBCARTAODECREDITO" Relationship="Self.FK_NCDIDBANDEIRACARTAO_TBCARTAODECREDITO" FromRole="TBOPERADORACARTAO" ToRole="TBCARTAODECREDITO" />
+  </EntityType>
+  <EntityType Name="TBPAIS">
+    <Key>
+      <PropertyRef Name="NCDIDPAIS" />
+    </Key>
+    <Property Name="NCDIDPAIS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSPAIS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBESTADO" Relationship="Self.FK_NCDIDPAIS_TBESTADO" FromRole="TBPAIS" ToRole="TBESTADO" />
+  </EntityType>
+  <EntityType Name="TBSETOR">
+    <Key>
+      <PropertyRef Name="NCDIDSETOR" />
+    </Key>
+    <Property Name="NCDIDSETOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMNOME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CDSDESCRICAO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <NavigationProperty Name="TBCARGO" Relationship="Self.FK_NCDIDSETOR_TBSETOR" FromRole="TBSETOR" ToRole="TBCARGO" />
+  </EntityType>
+  <EntityType Name="TBTIPOCONTATO">
+    <Key>
+      <PropertyRef Name="NCDIDTIPOCONTATO" />
+    </Key>
+    <Property Name="NCDIDTIPOCONTATO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDSDESCRICAO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBCONTATO" Relationship="Self.FK_NNRIDTIPOCONTATO_TBCONTATO" FromRole="TBTIPOCONTATO" ToRole="TBCONTATO" />
+  </EntityType>
+  <EntityType Name="TBUSUARIO">
+    <Key>
+      <PropertyRef Name="NCDIDUSUARIO" />
+    </Key>
+    <Property Name="NCDIDUSUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNMLOGIN" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CDSSENHA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NNRNIVELACESSO" Type="Int32" />
+    <Property Name="NCDIDFUNCIONARIO" Type="Int32" />
+    <Property Name="BIDATIVO" Type="Boolean" />
+    <NavigationProperty Name="TBFUNCIONARIO" Relationship="Self.FK_NCDIDFUNCIONARIO_TBUSUARIO" FromRole="TBUSUARIO" ToRole="TBFUNCIONARIO" />
+    <NavigationProperty Name="TBLOCACAO" Relationship="Self.FK_NCDIDUSUARIO_TBLOCACAO" FromRole="TBUSUARIO" ToRole="TBLOCACAO" />
+  </EntityType>
+  <Association Name="FK_NCDIDCARGO_TBFUNCIONARIO">
+    <End Role="TBCARGO" Type="Self.TBCARGO" Multiplicity="0..1" />
+    <End Role="TBFUNCIONARIO" Type="Self.TBFUNCIONARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCARGO">
+        <PropertyRef Name="NCDIDCARGO" />
+      </Principal>
+      <Dependent Role="TBFUNCIONARIO">
+        <PropertyRef Name="NCDIDCARGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDSETOR_TBSETOR">
+    <End Role="TBSETOR" Type="Self.TBSETOR" Multiplicity="0..1" />
+    <End Role="TBCARGO" Type="Self.TBCARGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBSETOR">
+        <PropertyRef Name="NCDIDSETOR" />
+      </Principal>
+      <Dependent Role="TBCARGO">
+        <PropertyRef Name="NCDIDSETOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDCARRO_TBLOCACAO">
+    <End Role="TBCARRO" Type="Self.TBCARRO" Multiplicity="0..1" />
+    <End Role="TBLOCACAO" Type="Self.TBLOCACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCARRO">
+        <PropertyRef Name="NCDIDCARRO" />
+      </Principal>
+      <Dependent Role="TBLOCACAO">
+        <PropertyRef Name="NCDIDCARRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDCORCARRO_TBCARRO">
+    <End Role="TBCOR" Type="Self.TBCOR" Multiplicity="0..1" />
+    <End Role="TBCARRO" Type="Self.TBCARRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCOR">
+        <PropertyRef Name="NCDIDCOR" />
+      </Principal>
+      <Dependent Role="TBCARRO">
+        <PropertyRef Name="NCDIDCORCARRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDMODELOCARRO_TBCARRO">
+    <End Role="TBMODELOCARRO" Type="Self.TBMODELOCARRO" Multiplicity="0..1" />
+    <End Role="TBCARRO" Type="Self.TBCARRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBMODELOCARRO">
+        <PropertyRef Name="NCDIDMODELOCARRO" />
+      </Principal>
+      <Dependent Role="TBCARRO">
+        <PropertyRef Name="NCDIDMODELOCARRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDBANDEIRACARTAO_TBCARTAODECREDITO">
+    <End Role="TBOPERADORACARTAO" Type="Self.TBOPERADORACARTAO" Multiplicity="0..1" />
+    <End Role="TBCARTAODECREDITO" Type="Self.TBCARTAODECREDITO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBOPERADORACARTAO">
+        <PropertyRef Name="NCDIDOPERADORACARTAO" />
+      </Principal>
+      <Dependent Role="TBCARTAODECREDITO">
+        <PropertyRef Name="NCDIDOPERADORACARTAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDCARTAO_TBLOCACAO">
+    <End Role="TBCARTAODECREDITO" Type="Self.TBCARTAODECREDITO" Multiplicity="0..1" />
+    <End Role="TBLOCACAO" Type="Self.TBLOCACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCARTAODECREDITO">
+        <PropertyRef Name="NCDIDCARTAO" />
+      </Principal>
+      <Dependent Role="TBLOCACAO">
+        <PropertyRef Name="NCDIDCARTAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDCLIENTE_TBCARTAODECREDITO">
+    <End Role="TBCLIENTE" Type="Self.TBCLIENTE" Multiplicity="0..1" />
+    <End Role="TBCARTAODECREDITO" Type="Self.TBCARTAODECREDITO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCLIENTE">
+        <PropertyRef Name="NCDIDCLIENTE" />
+      </Principal>
+      <Dependent Role="TBCARTAODECREDITO">
+        <PropertyRef Name="NCDIDCLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDICATEGORIACARRO_TBMODELOCARRO">
+    <End Role="TBCATEGORIACARRO" Type="Self.TBCATEGORIACARRO" Multiplicity="0..1" />
+    <End Role="TBMODELOCARRO" Type="Self.TBMODELOCARRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCATEGORIACARRO">
+        <PropertyRef Name="NCDIDCATEGORIACARRO" />
+      </Principal>
+      <Dependent Role="TBMODELOCARRO">
+        <PropertyRef Name="NCDIDCATEGORIACARRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDCIDADE_TBENDERECO">
+    <End Role="TBCIDADE" Type="Self.TBCIDADE" Multiplicity="0..1" />
+    <End Role="TBENDERECO" Type="Self.TBENDERECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCIDADE">
+        <PropertyRef Name="NCDIDCIDADE" />
+      </Principal>
+      <Dependent Role="TBENDERECO">
+        <PropertyRef Name="NCDIDCIDADE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDESTADO_TBCIDADE">
+    <End Role="TBESTADO" Type="Self.TBESTADO" Multiplicity="0..1" />
+    <End Role="TBCIDADE" Type="Self.TBCIDADE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBESTADO">
+        <PropertyRef Name="NCDIDESTADO" />
+      </Principal>
+      <Dependent Role="TBCIDADE">
+        <PropertyRef Name="NCDIDESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NNRIDTIPOCONTATO_TBCONTATO">
+    <End Role="TBTIPOCONTATO" Type="Self.TBTIPOCONTATO" Multiplicity="0..1" />
+    <End Role="TBCONTATO" Type="Self.TBCONTATO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBTIPOCONTATO">
+        <PropertyRef Name="NCDIDTIPOCONTATO" />
+      </Principal>
+      <Dependent Role="TBCONTATO">
+        <PropertyRef Name="NCDIDTIPOCONTATO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDPAIS_TBESTADO">
+    <End Role="TBPAIS" Type="Self.TBPAIS" Multiplicity="0..1" />
+    <End Role="TBESTADO" Type="Self.TBESTADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBPAIS">
+        <PropertyRef Name="NCDIDPAIS" />
+      </Principal>
+      <Dependent Role="TBESTADO">
+        <PropertyRef Name="NCDIDPAIS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDFUNCIONARIO_TBUSUARIO">
+    <End Role="TBFUNCIONARIO" Type="Self.TBFUNCIONARIO" Multiplicity="0..1" />
+    <End Role="TBUSUARIO" Type="Self.TBUSUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBFUNCIONARIO">
+        <PropertyRef Name="NCDIDFUNCIONARIO" />
+      </Principal>
+      <Dependent Role="TBUSUARIO">
+        <PropertyRef Name="NCDIDFUNCIONARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDUSUARIO_TBLOCACAO">
+    <End Role="TBUSUARIO" Type="Self.TBUSUARIO" Multiplicity="0..1" />
+    <End Role="TBLOCACAO" Type="Self.TBLOCACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBUSUARIO">
+        <PropertyRef Name="NCDIDUSUARIO" />
+      </Principal>
+      <Dependent Role="TBLOCACAO">
+        <PropertyRef Name="NCDIDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NCDIDMARCACARRO_TBMODELOCARRO">
+    <End Role="TBMARCACARRO" Type="Self.TBMARCACARRO" Multiplicity="0..1" />
+    <End Role="TBMODELOCARRO" Type="Self.TBMODELOCARRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBMARCACARRO">
+        <PropertyRef Name="NCDIDMARCACARRO" />
+      </Principal>
+      <Dependent Role="TBMODELOCARRO">
+        <PropertyRef Name="NCDIDMARCACARRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBPIMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBCARGO" EntityType="Self.TBCARGO" />
+    <EntitySet Name="TBCARRO" EntityType="Self.TBCARRO" />
+    <EntitySet Name="TBCARTAODECREDITO" EntityType="Self.TBCARTAODECREDITO" />
+    <EntitySet Name="TBCATEGORIACARRO" EntityType="Self.TBCATEGORIACARRO" />
+    <EntitySet Name="TBCIDADE" EntityType="Self.TBCIDADE" />
+    <EntitySet Name="TBCLIENTE" EntityType="Self.TBCLIENTE" />
+    <EntitySet Name="TBCONTATO" EntityType="Self.TBCONTATO" />
+    <EntitySet Name="TBCOR" EntityType="Self.TBCOR" />
+    <EntitySet Name="TBENDERECO" EntityType="Self.TBENDERECO" />
+    <EntitySet Name="TBESTADO" EntityType="Self.TBESTADO" />
+    <EntitySet Name="TBFUNCIONARIO" EntityType="Self.TBFUNCIONARIO" />
+    <EntitySet Name="TBLOCACAO" EntityType="Self.TBLOCACAO" />
+    <EntitySet Name="TBMARCACARRO" EntityType="Self.TBMARCACARRO" />
+    <EntitySet Name="TBMODELOCARRO" EntityType="Self.TBMODELOCARRO" />
+    <EntitySet Name="TBOPERADORACARTAO" EntityType="Self.TBOPERADORACARTAO" />
+    <EntitySet Name="TBPAIS" EntityType="Self.TBPAIS" />
+    <EntitySet Name="TBSETOR" EntityType="Self.TBSETOR" />
+    <EntitySet Name="TBTIPOCONTATO" EntityType="Self.TBTIPOCONTATO" />
+    <EntitySet Name="TBUSUARIO" EntityType="Self.TBUSUARIO" />
+    <AssociationSet Name="FK_NCDIDCARGO_TBFUNCIONARIO" Association="Self.FK_NCDIDCARGO_TBFUNCIONARIO">
+      <End Role="TBCARGO" EntitySet="TBCARGO" />
+      <End Role="TBFUNCIONARIO" EntitySet="TBFUNCIONARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDSETOR_TBSETOR" Association="Self.FK_NCDIDSETOR_TBSETOR">
+      <End Role="TBSETOR" EntitySet="TBSETOR" />
+      <End Role="TBCARGO" EntitySet="TBCARGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDCARRO_TBLOCACAO" Association="Self.FK_NCDIDCARRO_TBLOCACAO">
+      <End Role="TBCARRO" EntitySet="TBCARRO" />
+      <End Role="TBLOCACAO" EntitySet="TBLOCACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDCORCARRO_TBCARRO" Association="Self.FK_NCDIDCORCARRO_TBCARRO">
+      <End Role="TBCOR" EntitySet="TBCOR" />
+      <End Role="TBCARRO" EntitySet="TBCARRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDMODELOCARRO_TBCARRO" Association="Self.FK_NCDIDMODELOCARRO_TBCARRO">
+      <End Role="TBMODELOCARRO" EntitySet="TBMODELOCARRO" />
+      <End Role="TBCARRO" EntitySet="TBCARRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDBANDEIRACARTAO_TBCARTAODECREDITO" Association="Self.FK_NCDIDBANDEIRACARTAO_TBCARTAODECREDITO">
+      <End Role="TBOPERADORACARTAO" EntitySet="TBOPERADORACARTAO" />
+      <End Role="TBCARTAODECREDITO" EntitySet="TBCARTAODECREDITO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDCARTAO_TBLOCACAO" Association="Self.FK_NCDIDCARTAO_TBLOCACAO">
+      <End Role="TBCARTAODECREDITO" EntitySet="TBCARTAODECREDITO" />
+      <End Role="TBLOCACAO" EntitySet="TBLOCACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDCLIENTE_TBCARTAODECREDITO" Association="Self.FK_NCDIDCLIENTE_TBCARTAODECREDITO">
+      <End Role="TBCLIENTE" EntitySet="TBCLIENTE" />
+      <End Role="TBCARTAODECREDITO" EntitySet="TBCARTAODECREDITO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDICATEGORIACARRO_TBMODELOCARRO" Association="Self.FK_NCDICATEGORIACARRO_TBMODELOCARRO">
+      <End Role="TBCATEGORIACARRO" EntitySet="TBCATEGORIACARRO" />
+      <End Role="TBMODELOCARRO" EntitySet="TBMODELOCARRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDCIDADE_TBENDERECO" Association="Self.FK_NCDIDCIDADE_TBENDERECO">
+      <End Role="TBCIDADE" EntitySet="TBCIDADE" />
+      <End Role="TBENDERECO" EntitySet="TBENDERECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDESTADO_TBCIDADE" Association="Self.FK_NCDIDESTADO_TBCIDADE">
+      <End Role="TBESTADO" EntitySet="TBESTADO" />
+      <End Role="TBCIDADE" EntitySet="TBCIDADE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NNRIDTIPOCONTATO_TBCONTATO" Association="Self.FK_NNRIDTIPOCONTATO_TBCONTATO">
+      <End Role="TBTIPOCONTATO" EntitySet="TBTIPOCONTATO" />
+      <End Role="TBCONTATO" EntitySet="TBCONTATO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDPAIS_TBESTADO" Association="Self.FK_NCDIDPAIS_TBESTADO">
+      <End Role="TBPAIS" EntitySet="TBPAIS" />
+      <End Role="TBESTADO" EntitySet="TBESTADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDFUNCIONARIO_TBUSUARIO" Association="Self.FK_NCDIDFUNCIONARIO_TBUSUARIO">
+      <End Role="TBFUNCIONARIO" EntitySet="TBFUNCIONARIO" />
+      <End Role="TBUSUARIO" EntitySet="TBUSUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDUSUARIO_TBLOCACAO" Association="Self.FK_NCDIDUSUARIO_TBLOCACAO">
+      <End Role="TBUSUARIO" EntitySet="TBUSUARIO" />
+      <End Role="TBLOCACAO" EntitySet="TBLOCACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NCDIDMARCACARRO_TBMODELOCARRO" Association="Self.FK_NCDIDMARCACARRO_TBMODELOCARRO">
+      <End Role="TBMARCACARRO" EntitySet="TBMARCACARRO" />
+      <End Role="TBMODELOCARRO" EntitySet="TBMODELOCARRO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

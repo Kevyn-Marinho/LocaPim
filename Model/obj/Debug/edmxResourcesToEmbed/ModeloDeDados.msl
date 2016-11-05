@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBPIMModelStoreContainer" CdmEntityContainer="DBPIMEntities">
+    <EntitySetMapping Name="TBCARGO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCARGO">
+        <MappingFragment StoreEntitySet="TBCARGO">
+          <ScalarProperty Name="NCDIDCARGO" ColumnName="NCDIDCARGO" />
+          <ScalarProperty Name="CNMNOME" ColumnName="CNMNOME" />
+          <ScalarProperty Name="CDSDESCRICAO" ColumnName="CDSDESCRICAO" />
+          <ScalarProperty Name="NCDIDSETOR" ColumnName="NCDIDSETOR" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCARRO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCARRO">
+        <MappingFragment StoreEntitySet="TBCARRO">
+          <ScalarProperty Name="NCDIDCARRO" ColumnName="NCDIDCARRO" />
+          <ScalarProperty Name="CCDCHASSI" ColumnName="CCDCHASSI" />
+          <ScalarProperty Name="CCDPLACA" ColumnName="CCDPLACA" />
+          <ScalarProperty Name="DDTDATAFABRICACAO" ColumnName="DDTDATAFABRICACAO" />
+          <ScalarProperty Name="DDTDATAAQUISICAO" ColumnName="DDTDATAAQUISICAO" />
+          <ScalarProperty Name="NNRQTDEDELOCACOES" ColumnName="NNRQTDEDELOCACOES" />
+          <ScalarProperty Name="NCDIDCORCARRO" ColumnName="NCDIDCORCARRO" />
+          <ScalarProperty Name="NCDIDMODELOCARRO" ColumnName="NCDIDMODELOCARRO" />
+          <ScalarProperty Name="BIDLOCADO" ColumnName="BIDLOCADO" />
+          <ScalarProperty Name="NVLDIARIA" ColumnName="NVLDIARIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCARTAODECREDITO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCARTAODECREDITO">
+        <MappingFragment StoreEntitySet="TBCARTAODECREDITO">
+          <ScalarProperty Name="NCDIDCARTAO" ColumnName="NCDIDCARTAO" />
+          <ScalarProperty Name="NCDIDOPERADORACARTAO" ColumnName="NCDIDOPERADORACARTAO" />
+          <ScalarProperty Name="CCDRCARTAO" ColumnName="CCDRCARTAO" />
+          <ScalarProperty Name="NNRCODIGO" ColumnName="NNRCODIGO" />
+          <ScalarProperty Name="DDTVALIDADE" ColumnName="DDTVALIDADE" />
+          <ScalarProperty Name="CNMNOMECARTAO" ColumnName="CNMNOMECARTAO" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+          <ScalarProperty Name="NCDIDCLIENTE" ColumnName="NCDIDCLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCATEGORIACARRO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCATEGORIACARRO">
+        <MappingFragment StoreEntitySet="TBCATEGORIACARRO">
+          <ScalarProperty Name="NCDIDCATEGORIACARRO" ColumnName="NCDIDCATEGORIACARRO" />
+          <ScalarProperty Name="CNMCATEGORIACARRO" ColumnName="CNMCATEGORIACARRO" />
+          <ScalarProperty Name="CDSDESCRICAO" ColumnName="CDSDESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCIDADE">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCIDADE">
+        <MappingFragment StoreEntitySet="TBCIDADE">
+          <ScalarProperty Name="NCDIDCIDADE" ColumnName="NCDIDCIDADE" />
+          <ScalarProperty Name="CDSCIDADE" ColumnName="CDSCIDADE" />
+          <ScalarProperty Name="NCDIDESTADO" ColumnName="NCDIDESTADO" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCLIENTE">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCLIENTE">
+        <MappingFragment StoreEntitySet="TBCLIENTE">
+          <ScalarProperty Name="NCDIDCLIENTE" ColumnName="NCDIDCLIENTE" />
+          <ScalarProperty Name="CNMNOME" ColumnName="CNMNOME" />
+          <ScalarProperty Name="CNMSOBRENOME" ColumnName="CNMSOBRENOME" />
+          <ScalarProperty Name="CDSRG" ColumnName="CDSRG" />
+          <ScalarProperty Name="CDSCPF" ColumnName="CDSCPF" />
+          <ScalarProperty Name="DDTNASCIMENTO" ColumnName="DDTNASCIMENTO" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+          <ScalarProperty Name="CCDCNH" ColumnName="CCDCNH" />
+          <ScalarProperty Name="DDTEMISSAO" ColumnName="DDTEMISSAO" />
+          <ScalarProperty Name="DDTVENCIMENTO" ColumnName="DDTVENCIMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCONTATO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCONTATO">
+        <MappingFragment StoreEntitySet="TBCONTATO">
+          <ScalarProperty Name="NCDIDCONTATO" ColumnName="NCDIDCONTATO" />
+          <ScalarProperty Name="NCDIDTIPOCONTATO" ColumnName="NCDIDTIPOCONTATO" />
+          <ScalarProperty Name="CDSTELEFONE" ColumnName="CDSTELEFONE" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOR">
+      <EntityTypeMapping TypeName="DBPIMModel.TBCOR">
+        <MappingFragment StoreEntitySet="TBCOR">
+          <ScalarProperty Name="NCDIDCOR" ColumnName="NCDIDCOR" />
+          <ScalarProperty Name="CDSCOR" ColumnName="CDSCOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBENDERECO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBENDERECO">
+        <MappingFragment StoreEntitySet="TBENDERECO">
+          <ScalarProperty Name="NCDIDENDEDERECO" ColumnName="NCDIDENDEDERECO" />
+          <ScalarProperty Name="CDSLOGRADOURO" ColumnName="CDSLOGRADOURO" />
+          <ScalarProperty Name="NNRNUMERO" ColumnName="NNRNUMERO" />
+          <ScalarProperty Name="CDSCOMPLEMENTO" ColumnName="CDSCOMPLEMENTO" />
+          <ScalarProperty Name="NCDIDCIDADE" ColumnName="NCDIDCIDADE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBESTADO">
+        <MappingFragment StoreEntitySet="TBESTADO">
+          <ScalarProperty Name="NCDIDESTADO" ColumnName="NCDIDESTADO" />
+          <ScalarProperty Name="CDSUF" ColumnName="CDSUF" />
+          <ScalarProperty Name="CDSSIGLA" ColumnName="CDSSIGLA" />
+          <ScalarProperty Name="NCDIDPAIS" ColumnName="NCDIDPAIS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBFUNCIONARIO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBFUNCIONARIO">
+        <MappingFragment StoreEntitySet="TBFUNCIONARIO">
+          <ScalarProperty Name="NCDIDFUNCIONARIO" ColumnName="NCDIDFUNCIONARIO" />
+          <ScalarProperty Name="CNMNOME" ColumnName="CNMNOME" />
+          <ScalarProperty Name="CNMSOBRENOME" ColumnName="CNMSOBRENOME" />
+          <ScalarProperty Name="CDSRG" ColumnName="CDSRG" />
+          <ScalarProperty Name="CDSCPF" ColumnName="CDSCPF" />
+          <ScalarProperty Name="DDTNASCIMENTO" ColumnName="DDTNASCIMENTO" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+          <ScalarProperty Name="NCDIDCARGO" ColumnName="NCDIDCARGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLOCACAO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBLOCACAO">
+        <MappingFragment StoreEntitySet="TBLOCACAO">
+          <ScalarProperty Name="NCDIDLOCACAO" ColumnName="NCDIDLOCACAO" />
+          <ScalarProperty Name="NCDIDUSUARIO" ColumnName="NCDIDUSUARIO" />
+          <ScalarProperty Name="DDTLOCACAO" ColumnName="DDTLOCACAO" />
+          <ScalarProperty Name="NVLLOCACAO" ColumnName="NVLLOCACAO" />
+          <ScalarProperty Name="DDTDEVOLUCAO" ColumnName="DDTDEVOLUCAO" />
+          <ScalarProperty Name="NCDIDCARTAO" ColumnName="NCDIDCARTAO" />
+          <ScalarProperty Name="NCDIDCARRO" ColumnName="NCDIDCARRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBMARCACARRO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBMARCACARRO">
+        <MappingFragment StoreEntitySet="TBMARCACARRO">
+          <ScalarProperty Name="NCDIDMARCACARRO" ColumnName="NCDIDMARCACARRO" />
+          <ScalarProperty Name="CNMMARCACARRO" ColumnName="CNMMARCACARRO" />
+          <ScalarProperty Name="CDSDESCRICAO" ColumnName="CDSDESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBMODELOCARRO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBMODELOCARRO">
+        <MappingFragment StoreEntitySet="TBMODELOCARRO">
+          <ScalarProperty Name="NCDIDMODELOCARRO" ColumnName="NCDIDMODELOCARRO" />
+          <ScalarProperty Name="CDSMODELOCARRO" ColumnName="CDSMODELOCARRO" />
+          <ScalarProperty Name="NCDIDMARCACARRO" ColumnName="NCDIDMARCACARRO" />
+          <ScalarProperty Name="NCDIDCATEGORIACARRO" ColumnName="NCDIDCATEGORIACARRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOPERADORACARTAO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBOPERADORACARTAO">
+        <MappingFragment StoreEntitySet="TBOPERADORACARTAO">
+          <ScalarProperty Name="NCDIDOPERADORACARTAO" ColumnName="NCDIDOPERADORACARTAO" />
+          <ScalarProperty Name="CDSBANDEIRA" ColumnName="CDSBANDEIRA" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPAIS">
+      <EntityTypeMapping TypeName="DBPIMModel.TBPAIS">
+        <MappingFragment StoreEntitySet="TBPAIS">
+          <ScalarProperty Name="NCDIDPAIS" ColumnName="NCDIDPAIS" />
+          <ScalarProperty Name="CDSPAIS" ColumnName="CDSPAIS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBSETOR">
+      <EntityTypeMapping TypeName="DBPIMModel.TBSETOR">
+        <MappingFragment StoreEntitySet="TBSETOR">
+          <ScalarProperty Name="NCDIDSETOR" ColumnName="NCDIDSETOR" />
+          <ScalarProperty Name="CNMNOME" ColumnName="CNMNOME" />
+          <ScalarProperty Name="CDSDESCRICAO" ColumnName="CDSDESCRICAO" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTIPOCONTATO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBTIPOCONTATO">
+        <MappingFragment StoreEntitySet="TBTIPOCONTATO">
+          <ScalarProperty Name="NCDIDTIPOCONTATO" ColumnName="NCDIDTIPOCONTATO" />
+          <ScalarProperty Name="CDSDESCRICAO" ColumnName="CDSDESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBUSUARIO">
+      <EntityTypeMapping TypeName="DBPIMModel.TBUSUARIO">
+        <MappingFragment StoreEntitySet="TBUSUARIO">
+          <ScalarProperty Name="NCDIDUSUARIO" ColumnName="NCDIDUSUARIO" />
+          <ScalarProperty Name="CNMLOGIN" ColumnName="CNMLOGIN" />
+          <ScalarProperty Name="CDSSENHA" ColumnName="CDSSENHA" />
+          <ScalarProperty Name="NNRNIVELACESSO" ColumnName="NNRNIVELACESSO" />
+          <ScalarProperty Name="NCDIDFUNCIONARIO" ColumnName="NCDIDFUNCIONARIO" />
+          <ScalarProperty Name="BIDATIVO" ColumnName="BIDATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

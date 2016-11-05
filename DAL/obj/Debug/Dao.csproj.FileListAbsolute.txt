@@ -1,0 +1,14 @@
+D:\Projetos\PIM\DAL\bin\Debug\Dao.dll.config
+D:\Projetos\PIM\DAL\bin\Debug\Dao.dll
+D:\Projetos\PIM\DAL\bin\Debug\Dao.pdb
+D:\Projetos\PIM\DAL\bin\Debug\EntityFramework.dll
+D:\Projetos\PIM\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projetos\PIM\DAL\bin\Debug\Model.dll
+D:\Projetos\PIM\DAL\bin\Debug\Model.pdb
+D:\Projetos\PIM\DAL\bin\Debug\EntityFramework.xml
+D:\Projetos\PIM\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projetos\PIM\DAL\obj\Debug\Dao.csprojResolveAssemblyReference.cache
+D:\Projetos\PIM\DAL\obj\Debug\Dao.dll
+D:\Projetos\PIM\DAL\obj\Debug\Dao.pdb
+D:\Projetos\PIM\DAL\obj\Debug\Dao.Migrations.CorrecaoKeys.resources
+D:\Projetos\PIM\DAL\obj\Debug\Dao.csproj.GenerateResource.Cache

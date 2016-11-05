@@ -1,0 +1,11 @@
+D:\Projetos\PIM\Controller\bin\Debug\Business.dll
+D:\Projetos\PIM\Controller\bin\Debug\Business.pdb
+D:\Projetos\PIM\Controller\bin\Debug\Dao.dll
+D:\Projetos\PIM\Controller\bin\Debug\Model.dll
+D:\Projetos\PIM\Controller\bin\Debug\EntityFramework.dll
+D:\Projetos\PIM\Controller\bin\Debug\Dao.pdb
+D:\Projetos\PIM\Controller\bin\Debug\Model.pdb
+D:\Projetos\PIM\Controller\bin\Debug\EntityFramework.xml
+D:\Projetos\PIM\Controller\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\Projetos\PIM\Controller\obj\Debug\Business.dll
+D:\Projetos\PIM\Controller\obj\Debug\Business.pdb

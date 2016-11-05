@@ -1,0 +1,16 @@
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\TestesUnitarios.exe.config
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\TestesUnitarios.exe
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\TestesUnitarios.pdb
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\Business.dll
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\Dao.dll
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\EntityFramework.dll
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\Model.dll
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\Business.pdb
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\Dao.pdb
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\Model.pdb
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\EntityFramework.xml
+D:\Projetos\PIM\TestesUnitarios\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projetos\PIM\TestesUnitarios\obj\Debug\TestesUnitarios.csprojResolveAssemblyReference.cache
+D:\Projetos\PIM\TestesUnitarios\obj\Debug\TestesUnitarios.exe
+D:\Projetos\PIM\TestesUnitarios\obj\Debug\TestesUnitarios.pdb
