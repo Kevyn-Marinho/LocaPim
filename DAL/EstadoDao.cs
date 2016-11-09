@@ -31,7 +31,7 @@ namespace Dao
 
         public IList<Estado> Listar()
         {
-            return contexto.Estado.ToList();
+            return contexto.Estado.Include("Pais").ToList();
         }
     }
 }

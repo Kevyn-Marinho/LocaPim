@@ -54,6 +54,7 @@
     <Compile Include="CarroDao.cs" />
     <Compile Include="ClienteDao.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="Dao.cs" />
     <Compile Include="EntidadesContext.cs" />
     <Compile Include="EstadoDao.cs" />
     <Compile Include="FuncionarioDao.cs" />

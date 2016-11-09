@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Master/_Administrativo.cshtml";
+}
+
+<h2>Index</h2>
+
+<button id="btnNovoPais" class="btn btn-default">Novo</button>
+<table class="table">
+    <tr>
+        <th>
+            Paises
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var pais in ViewBag.Paises) {
+    <tr>
+        <td>
+            @pais.Nome
+        </td>
+        <td>
+            <button class="btn btn-default detalhe" id="detalhe" data-id="@pais.IdPais">Detalhes</button>
+            <button class="btn btn-danger deletar" data-id="@pais.IdPais">Deletar</button>
+            <button class="btn btn-primary editar" data-id="@pais.IdPais">Editar</button>
+        </td>
+    </tr>
+}
+
+</table>
+<div class="modal" id="modal">
+
+</div>
+    
+<script>
+    $(function () {
+        $('#btnNovoPais').click(function () {
+            $("#modal").load("Pais/Create");
+            $('#modal').modal('show');
+        })
+    });
+    $(function () {
+        $('.detalhe').click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("Pais/Details?id=" + id);
+            $('#modal').modal('show');
+        })
+    });
+
+    $(function () {
+        $('.deletar').click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("Pais/Delete?id=" + id, function () {
+                $('#modal').modal('show');
+            });
+        })
+    });
+
+</script>

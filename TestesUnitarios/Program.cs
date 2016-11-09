@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dao;
+using Business;
 using Model;
 namespace TestesUnitarios
 {
@@ -11,27 +11,25 @@ namespace TestesUnitarios
     {
         static void Main(string[] args)
         {
-            Pais pais = new Pais()
+            
+            var paisCtl = new PaisCtl();
+            var p1 = new Pais()
             {
-                Nome = "Brasil"
+                Nome = "Argentina"
             };
-            Estado estado = new Estado()
+            var p2 = new Pais()
             {
-                Pais = pais,
-                Sigla = "SP",
-                Uf = "São Paulo"
+                Nome = "Alemanha"
             };
 
-            var paisDao = new PaisDao();
-            paisDao.Adicionar(pais);
+            paisCtl.Adicionar(p1);
+            paisCtl.Adicionar(p2);
+            paisCtl.SalvarAlteracoes();
 
-            var estadoDao = new EstadoDao();
-            estadoDao.Adicionar(estado);
-            estadoDao.SaveChanges();
-            paisDao.Listar();
-            estadoDao.Listar();
-            
-            
+            foreach (var pais in paisCtl.Listar())
+            {
+                Console.WriteLine(pais.Nome);
+            }
 
             Console.ReadLine();
         }

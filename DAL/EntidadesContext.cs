@@ -29,11 +29,12 @@ namespace Dao
         public DbSet<TipoDeContato> TiposDeContatos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
-
         public EntidadesContext()
             : base( @"Data Source=BUZZ\SQLEXPRESS;Initial Catalog=LocaPim;Integrated Security=True")
         {
             Database.Connection.ConnectionString = @"Data Source=BUZZ\SQLEXPRESS;Initial Catalog=LocaPim;Integrated Security=True";
         }
+
+
     }
 }
