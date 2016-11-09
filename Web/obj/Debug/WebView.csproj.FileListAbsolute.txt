@@ -30,3 +30,4 @@ D:\Projetos\PIM\MvcApplication1\bin\WebView.dll
 D:\Projetos\PIM\MvcApplication1\bin\WebView.pdb
 D:\Projetos\PIM\MvcApplication1\obj\Debug\WebView.dll
 D:\Projetos\PIM\MvcApplication1\obj\Debug\WebView.pdb
+D:\Projetos\PIM\Web\obj\Debug\WebView.csprojResolveAssemblyReference.cache

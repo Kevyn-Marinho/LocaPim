@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Model;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
+    [Table("Locacoes")]
     public class Locacao
     {
-        private Cliente cliente;
-        private CartaoDeCredito cartao;
-        private Carro carro;
-
-        public Carro Carro { get{ return this.Carro; } }
-        public CartaoDeCredito Cartao { get { return this.Cartao; } }
-        public Cliente Cliente { get { return this.cliente; } }
-        
-        public Locacao(Carro carro, Cliente cliente, CartaoDeCredito cartao)
-        {
-            this.carro  = carro;
-            this.cartao =  cartao;
-            this.cliente = cliente;
-        }
+        [Key]
+        public int IdLocacao { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public int IdCliente { get; set; }
+        public virtual CartaoDeCredito Cartao { get; set; }
+        [Required]
+        public int IdCartao { get; set; }
+        public virtual Carro Carro { get; set; }
+        [Required]
+        public int IdCarro { get; set; }
     
     }
 }

@@ -5,47 +5,34 @@ using System.Text;
 using System.Data.SqlClient;
 using Model;
 
-namespace DAL
+namespace Dao
 {
-    public class LocacaoDAO
+    public class LocacaoDao : IDao<Locacao>
     {
-        private Locacao locacao;
-
-        public LocacaoDAO(Locacao locacao)
+        private EntidadesContext contexto;
+        public LocacaoDao()
         {
-            this.locacao = locacao;    
+            this.contexto = new EntidadesContext();
         }
 
-        public Boolean RealizaLocacao()
+        public void Adicionar(Locacao locacao)
         {
-            Conexao conexao = new Conexao();
-            SqlConnection conn;
-            bool locado = false;
-
-            SqlCommand cmd = new SqlCommand("SP_Funcionarios_ListaCarrega");
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandTimeout = 500;
-
-            try
-            {
-                conn = conexao.AbrirConexao();
-                conn.Open();
-                cmd.Connection = conn;
-                
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    locado = true;
-                }
-                conexao.FecharConexao(conn);
-
-                return locado;
-
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
+            contexto.Locacoes.Add(locacao);
         }
 
+        public void SaveChanges()
+        {
+            contexto.SaveChanges();
+        }
+
+        public void Excluir(Locacao locacao)
+        {
+            contexto.Locacoes.Remove(locacao);
+        }
+
+        public IList<Locacao> Listar()
+        {
+            return contexto.Locacoes.ToList();
+        }
     }
 }

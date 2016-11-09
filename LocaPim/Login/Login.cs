@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using Controller;
+using Business;
 using Model;
 
 namespace LocaPim.Login
@@ -27,7 +27,7 @@ namespace LocaPim.Login
         private bool Logar()
         {
 
-            UsuarioController control = new UsuarioController();
+            UsuarioCtl control = new UsuarioCtl();
             Usuario usuario = control.Login(txtLogin.Text,txtPassword.Text);
 
             if (usuario !=null)

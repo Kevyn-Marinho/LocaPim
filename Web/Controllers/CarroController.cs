@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Controller;
+using Business;
 using Model;
 
 namespace WebView.Controllers
@@ -11,13 +11,13 @@ namespace WebView.Controllers
     public class CarroController : System.Web.Mvc.Controller
     {
         //
-        // GET: /Carro/
+        // GET: /CarroCtl/
 
         public ActionResult Index()
         {
-            Controller.CarroController carro = new Controller.CarroController();
+            Business.CarroCtl carro = new Business.CarroCtl();
             
-            return View(carro.ListaFrota());
+            return View(carro.Listar());
         }
 
         //GET
@@ -28,8 +28,8 @@ namespace WebView.Controllers
         [HttpPost]
         public ActionResult Criar(Carro carro)
         {
-            Controller.CarroController con = new Controller.CarroController(carro);
-            ViewBag.msg = con.Adiciona();
+            Business.CarroCtl con = new Business.CarroCtl();
+            con.Adicionar(carro);
 
             return RedirectToAction("Index");
         }

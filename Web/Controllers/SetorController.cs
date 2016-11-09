@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Model;
+using Business;
 namespace WebView.Controllers
 {
     public class SetorController : System.Web.Mvc.Controller

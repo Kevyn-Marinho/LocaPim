@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DAL
+namespace Dao
 {
-    interface IDao 
+    interface IDao<T> 
     {
-        void Incluir();
-        void Alterar();
-        void Excluir();
+        void Adicionar(T Obj);
+        void SaveChanges();
+        void Excluir(T Obj);
+        IList<T> Listar();
     }
 }
