@@ -5,26 +5,25 @@ using System.Text;
 using Model;
 namespace Dao
 {
-    public class FuncionarioDao : IDao<Funcionario>
+    class EnderecoDao : IDao<Endereco>
     {
         private EntidadesContext contexto;
 
-        public FuncionarioDao(EntidadesContext contexto)
+        public EnderecoDao(EntidadesContext contexto)
         {
             this.contexto = contexto;
         }
-        public void Adicionar(Funcionario funcionario)
+        public void Adicionar(Endereco endereco)
         {
             try
             {
-                contexto.Funcionarios.Add(funcionario);
+                contexto.Enderecos.Add(endereco);
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
-
         public void SaveChanges()
         {
             try
@@ -37,11 +36,11 @@ namespace Dao
             }
         }
 
-        public void Excluir(Funcionario funcionario)
+        public void Excluir(Endereco endereco)
         {
             try
             {
-                contexto.Funcionarios.Remove(funcionario);
+                contexto.Enderecos.Remove(endereco);
             }
             catch (Exception e)
             {
@@ -49,11 +48,11 @@ namespace Dao
             }
         }
 
-        public IList<Funcionario> Listar()
+        public IList<Endereco> Listar()
         {
             try
             {
-                return contexto.Funcionarios.ToList();
+                return contexto.Enderecos.ToList();
 
             }
             catch (Exception e)

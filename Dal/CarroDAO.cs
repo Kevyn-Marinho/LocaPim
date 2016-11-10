@@ -10,28 +10,56 @@ namespace Dao
     public class CarroDao : IDao<Carro>
     {
         private EntidadesContext contexto;
-        public CarroDao(){
-            this.contexto = new EntidadesContext();
+        public CarroDao(EntidadesContext contexto)
+        {
+            this.contexto = contexto;
         }
  
         public void Adicionar(Carro carro) 
         {
-            contexto.Carros.Add(carro);
+            try
+            {
+                contexto.Carros.Add(carro);
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void SaveChanges()
         {
-            contexto.SaveChanges();
+            try
+            {
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
 
         public void Excluir(Carro carro)
         {
-            contexto.Carros.Remove(carro);
+            try
+            {
+                contexto.Carros.Remove(carro);
+                contexto.SaveChanges();
+            }catch(Exception e){
+                throw e;
+            }
         }
 
         public IList<Carro> Listar()
         {
-            return contexto.Carros.ToList();
+            try
+            {
+                return contexto.Carros.ToList();
+            }catch(Exception e){
+                throw e;
+            }
         }
     }
 }

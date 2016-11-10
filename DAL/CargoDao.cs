@@ -11,29 +11,58 @@ namespace Dao
     {
         private EntidadesContext contexto;
 
-        public CargoDao()
+        public CargoDao(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this.contexto = contexto;
         }
 
         public void Adicionar(Cargo cargo)
         {
-            contexto.Cargos.Add(cargo);
-            contexto.SaveChanges();
+            try
+            {
+                contexto.Cargos.Add(cargo);
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void SaveChanges()
         {
-            contexto.SaveChanges();
+            try
+            {
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void Excluir(Cargo cargo)
         {
-            contexto.Cargos.Remove(cargo);
+            try
+            {
+                contexto.Cargos.Remove(cargo);
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public IList<Cargo> Listar()
         {
-            return  contexto.Cargos.ToList();
+            try
+            {
+                return contexto.Cargos.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
       }

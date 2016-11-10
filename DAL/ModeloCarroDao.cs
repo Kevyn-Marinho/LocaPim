@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Model;
+
 namespace Dao
 {
-    public class FuncionarioDao : IDao<Funcionario>
+    class ModeloCarroDao : IDao<ModeloCarro>
     {
         private EntidadesContext contexto;
 
-        public FuncionarioDao(EntidadesContext contexto)
+        public ModeloCarroDao(EntidadesContext contexto)
         {
             this.contexto = contexto;
         }
-        public void Adicionar(Funcionario funcionario)
+        public void Adicionar(ModeloCarro modelo)
         {
             try
             {
-                contexto.Funcionarios.Add(funcionario);
+                contexto.Modelo.Add(modelo);
             }
             catch (Exception e)
             {
@@ -30,41 +31,40 @@ namespace Dao
             try
             {
                 contexto.SaveChanges();
+
             }
             catch (Exception e)
             {
                 throw e;
             }
+
         }
 
-        public void Excluir(Funcionario funcionario)
+        public void Excluir(ModeloCarro modelo)
         {
             try
             {
-                contexto.Funcionarios.Remove(funcionario);
+                contexto.Modelo.Remove(modelo);
+
             }
             catch (Exception e)
             {
                 throw e;
             }
+
         }
 
-        public IList<Funcionario> Listar()
+        public IList<ModeloCarro> Listar()
         {
             try
             {
-                return contexto.Funcionarios.ToList();
-
+                return contexto.Modelo.ToList();
             }
             catch (Exception e)
             {
                 throw e;
             }
-        }
 
-        public void FecharConexao()
-        {
-            contexto.Dispose();
-        }    
+        }
     }
 }

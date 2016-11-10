@@ -16,19 +16,48 @@ namespace Dao
         }
         public void Adicionar(Cliente cliente)
         {
-            contexto.Clientes.Add(cliente);
+            try
+            {
+                contexto.Clientes.Add(cliente);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void SaveChanges()
         {
-            contexto.SaveChanges();            
+            try
+            {
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }             
         }
         public void Excluir(Cliente cliente)
         {
-            contexto.Clientes.Remove(cliente);
+            try
+            {
+                contexto.Clientes.Remove(cliente);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            } 
         }
         public IList<Cliente> Listar(){
-            return contexto.Clientes.ToList();
+            try
+            {
+                return contexto.Clientes.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
         }
 
 
