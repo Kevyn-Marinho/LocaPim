@@ -9,14 +9,50 @@ namespace Business
 {
     public class CarroCtl
     {
-     public IList<Carro> Listar(){
-         return new CarroDao().Listar();
-     }
+        private EntidadesContext contexto;
 
-     public void Adicionar(Carro carro)
-     {
-         new CarroDao().Adicionar(carro);
-     }
-
+        public CarroCtl()
+        {
+            this.contexto = new EntidadesContext();
+        }
+        public IList<Carro> Listar(){
+            try
+            {
+                return new CarroDao(contexto).Listar();
+            }catch(Exception e){
+                throw e;
+            }
+        }
+        public void Adicionar(Carro carro)
+        {
+            try
+            {
+                new CarroDao(contexto).Adicionar(carro);
+            }catch(Exception e){
+                throw e;
+            }
+        }
+        public void SalvarAlteracoes()
+        {
+            try
+            {
+                new CarroDao(contexto).SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e
+            }
+        }
+        public void Excluir(Carro carro)
+        {
+            try
+            {
+                new CarroDao(contexto).Excluir(carro);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

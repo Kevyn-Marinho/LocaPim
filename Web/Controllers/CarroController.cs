@@ -28,10 +28,16 @@ namespace WebView.Controllers
         [HttpPost]
         public ActionResult Criar(Carro carro)
         {
-            Business.CarroCtl con = new Business.CarroCtl();
-            con.Adicionar(carro);
+            try
+            {
+                CarroCtl con = new CarroCtl();
+                con.Adicionar(carro);
+                return RedirectToAction("Index");
 
-            return RedirectToAction("Index");
+            }catch(Exception e){
+                return View();
+            }
+
         }
 
     }

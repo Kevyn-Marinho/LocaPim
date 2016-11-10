@@ -10,28 +10,61 @@ namespace Dao
     {
         private EntidadesContext contexto;
 
-        public EstadoDao()
+        public EstadoDao(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this.contexto = contexto;
         }
         public void Adicionar(Estado estado)
         {
-            contexto.Estado.Add(estado);
+            try
+            {
+                contexto.Estado.Add(estado);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void SaveChanges()
         {
-            contexto.SaveChanges();
+            try
+            {
+                contexto.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
 
         public void Excluir(Estado estado)
         {
-            contexto.Estado.Remove(estado);
+            try
+            {
+                contexto.Estado.Remove(estado);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
 
         public IList<Estado> Listar()
         {
-            return contexto.Estado.Include("Pais").ToList();
+            try
+            {
+                return contexto.Estado.Include("Pais").ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
     }
 }

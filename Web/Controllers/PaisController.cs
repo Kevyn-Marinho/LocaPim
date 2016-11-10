@@ -82,7 +82,8 @@ namespace WebView.Controllers
 
                 if (ModelState.IsValid)
                 {
-
+                    pais = model;
+                    ctl.SalvarAlteracoes();
                 }
 
                 return RedirectToAction("Index");

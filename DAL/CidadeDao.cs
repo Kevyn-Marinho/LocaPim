@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Model;
+
 namespace Dao
 {
-    public class FuncionarioDao : IDao<Funcionario>
+    class CidadeDao : IDao<Cidade>
     {
         private EntidadesContext contexto;
 
-        public FuncionarioDao(EntidadesContext contexto)
+        public CidadeDao(EntidadesContext contexto)
         {
             this.contexto = contexto;
         }
-        public void Adicionar(Funcionario funcionario)
+        public void Adicionar(Cidade cidade)
         {
             try
             {
-                contexto.Funcionarios.Add(funcionario);
+                contexto.Cidades.Add(cidade);
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
-
         public void SaveChanges()
         {
             try
@@ -37,11 +37,11 @@ namespace Dao
             }
         }
 
-        public void Excluir(Funcionario funcionario)
+        public void Excluir(Cidade cidade)
         {
             try
             {
-                contexto.Funcionarios.Remove(funcionario);
+                contexto.Cidades.Remove(cidade);
             }
             catch (Exception e)
             {
@@ -49,11 +49,11 @@ namespace Dao
             }
         }
 
-        public IList<Funcionario> Listar()
+        public IList<Cidade> Listar()
         {
             try
             {
-                return contexto.Funcionarios.ToList();
+                return contexto.Cidades.ToList();
 
             }
             catch (Exception e)
@@ -68,3 +68,4 @@ namespace Dao
         }    
     }
 }
+
