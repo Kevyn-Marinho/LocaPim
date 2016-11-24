@@ -25,7 +25,7 @@ namespace Dao
             }
             catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
 
@@ -37,7 +37,7 @@ namespace Dao
             }
             catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
 
@@ -50,7 +50,7 @@ namespace Dao
             }
             catch (Exception e)
             {
-                throw e;
+                throw;
             }
         }
         public IList<Cargo> Listar()

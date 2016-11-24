@@ -1,0 +1,90 @@
+﻿@model Model.Funcionario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Funcionario</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sobrenome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Rg)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rg)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cpf)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataNascimento)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Ativo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Usuario)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cargo.Descricao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cargo.Descricao)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

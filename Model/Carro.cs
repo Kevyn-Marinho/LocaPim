@@ -13,15 +13,21 @@ namespace Model
         [Key]
         public int IdCarro { get; set; }
         public string Chassi { get; set; }
+        [Required]
         public string Placa { get; set; }
         public DateTime DataFabricacao { get; set; }
+        [Required]
         public DateTime DataAquisicao { get; set; }
         public bool Locado { get; set; }
+        [Required]
         public decimal ValorDiaria { get; set; }
         public int QuantidadeLocacoes { get; set; }
-        public virtual ModeloCarro Modelo { get; set; }
-        public int IdModelo { get; set; }    
-        public virtual Marca Marca { get; set; }
+
+        [Required]
+        public ModeloCarro Modelo { get; set; }
+        public int IdModeloCarro { get; set; }
+        [Required]
+        public Marca Marca { get; set; }
         public int IdMarca { get; set; }
 
     }

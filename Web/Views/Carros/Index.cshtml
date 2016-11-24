@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Model.Carro>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chassi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFabricacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAquisicao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDiaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeLocacoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMarca)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chassi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFabricacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAquisicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDiaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeLocacoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMarca)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdCarro }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdCarro }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IdCarro })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -15,7 +15,9 @@ namespace Model
         public string Descricao { get; set; }
         public string Nome { get; set; }
         public bool Ativo { get; set; }
-        public virtual Setor Setor { get; set; }
+
+        [Required]
+        public Setor Setor { get; set; }
         public int IdSetor { get; set; }
 
         public override string ToString()

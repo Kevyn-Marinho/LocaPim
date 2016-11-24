@@ -1,0 +1,82 @@
+﻿@model Model.CartaoDeCredito
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>CartaoDeCredito</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Validade)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Validade)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroCartao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NumeroCartao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CodigoSeguranca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CodigoSeguranca)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeCartao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NomeCartao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Ativo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IdCliente)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IdOperadoraCartao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IdOperadoraCartao)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdCartaoDeCredito }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

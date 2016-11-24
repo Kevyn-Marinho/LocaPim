@@ -12,3 +12,5 @@ D:\Projetos\PIM\DAL\obj\Debug\Dao.Migrations.CorrecaoKeys.resources
 D:\Projetos\PIM\DAL\obj\Debug\Dao.csproj.GenerateResource.Cache
 D:\Projetos\PIM\DAL\obj\Debug\Dao.dll
 D:\Projetos\PIM\DAL\obj\Debug\Dao.pdb
+D:\Projetos\PIM\DAL\obj\Debug\Dao.Migrations.CorrecaoIdFuncionario.resources
+D:\Projetos\PIM\DAL\obj\Debug\Dao.Migrations.CorreçãoModel.resources

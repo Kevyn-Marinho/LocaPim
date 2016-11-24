@@ -40,7 +40,7 @@ namespace Business
             }
             catch (Exception e)
             {
-                throw e
+                throw e;
             }
         }
         public void Excluir(Carro carro)

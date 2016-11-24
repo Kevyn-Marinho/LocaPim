@@ -12,14 +12,23 @@ namespace Model
     {
         [Key]
         public int IdCartaoDeCredito { get; set; }
+        [Required]
         public DateTime Validade { get; set; }
+        [Required]
         public string NumeroCartao { get; set; }
+        [Required]
         public int CodigoSeguranca { get; set; }
+        [Required]
         public string NomeCartao { get; set; }
+
         public bool Ativo { get; set; }
-        public virtual Cliente Cliente { get; set; }
+
+        [Required]
+        public Cliente Cliente { get; set; }
         public int IdCliente { get; set; }
+
+        [Required]
         public virtual OperadoraCartao Operadora { get; set; }
-        public int IdOperadora { get; set; }
+        public int IdOperadoraCartao { get; set; }
     }
 }

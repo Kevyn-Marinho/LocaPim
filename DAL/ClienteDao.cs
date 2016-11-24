@@ -25,7 +25,6 @@ namespace Dao
                 throw e;
             }
         }
-
         public void SaveChanges()
         {
             try
@@ -60,6 +59,9 @@ namespace Dao
             
         }
 
-
+        public void FecharConexao()
+        {
+            contexto.Dispose();
+        }
     }
 }

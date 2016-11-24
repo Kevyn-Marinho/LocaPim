@@ -1,0 +1,58 @@
+﻿@model Model.Contato
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Contato</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoContato.Descricao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TipoContato.Descricao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.contato)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.contato)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Ativo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IdPessoa)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IdPessoa)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdContato }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

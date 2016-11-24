@@ -16,10 +16,11 @@ namespace Model
         public string Logradouro { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
-        public virtual Cidade Cidade { get; set; }
-        public int IdCidade { get; set; }
-        public virtual Pessoa Pessoa { get; set; }
         [Required]
+        public Cidade Cidade { get; set; }
+        public int IdCidade { get; set; }
+        [Required]
+        public Pessoa Pessoa { get; set; }
         public int IdPessoa { get; set; }
         
     }

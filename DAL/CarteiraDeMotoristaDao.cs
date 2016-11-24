@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class CarteiraDeMotoristaDao: IDao<CarteiraDeMotoristaDao>
+    class CarteiraDeMotoristaDao: IDao<CarteiraDeMotorista>
     {
         private EntidadesContext contexto;
 

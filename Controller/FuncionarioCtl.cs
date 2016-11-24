@@ -9,9 +9,15 @@ namespace Business
 {
     public class FuncionarioCtl
     {
+        private EntidadesContext contexto;
+        public FuncionarioCtl()
+        {
+            this.contexto = new EntidadesContext();
+        }
+
         public IList<Funcionario> Listar()
         {
-            return new FuncionarioDao().Listar();
+            return new FuncionarioDao(contexto).Listar();
         }
        
     }

@@ -13,13 +13,15 @@ namespace Model
     {
         [Key]
         public int IdLocacao { get; set; }
-        public virtual Cliente Cliente { get; set; }
-        public int IdCliente { get; set; }
-        public virtual CartaoDeCredito Cartao { get; set; }
+        public Cliente Cliente { get; set; }
+        public int Id { get; set; }
+
         [Required]
-        public int IdCartao { get; set; }
-        public virtual Carro Carro { get; set; }
+        public CartaoDeCredito Cartao { get; set; }
+        public int IdCartaoDeCredito { get; set; }
+
         [Required]
+        public Carro Carro { get; set; }
         public int IdCarro { get; set; }
     
     }

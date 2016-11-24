@@ -1,0 +1,98 @@
+﻿@model Model.Carro
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Carro</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Modelo.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Modelo.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Chassi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Chassi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Placa)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Placa)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataFabricacao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataFabricacao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataAquisicao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataAquisicao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Locado)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Locado)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ValorDiaria)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ValorDiaria)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.QuantidadeLocacoes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.QuantidadeLocacoes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IdMarca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IdMarca)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdCarro }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

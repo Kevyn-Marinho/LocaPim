@@ -12,11 +12,14 @@ namespace Model
     {   
         [Key]
         public int IdContato { get; set; }
-        public string telefone { get; set; }
+        [Required]
+        public string contato { get; set; }
         public bool Ativo { get; set; }
-        public virtual Pessoa Pessoa { get; set; }
+        [Required]
+        public Pessoa Pessoa { get; set; }
         public int IdPessoa { get; set; }
-        public virtual TipoDeContato TipoContato { get; set; }
+
+        public TipoDeContato TipoContato { get; set; }
         public int IdTipoDeContato { get; set; }
     }
 }
