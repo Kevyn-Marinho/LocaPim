@@ -1,9 +1,5 @@
 ﻿@model IEnumerable<Model.Cargo>
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -13,7 +9,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Novo", "Create")
     </p>
     <table class="table">
         <tr>
@@ -47,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Ativo)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdCargo }) |
-                @Html.ActionLink("Details", "Details", new { id=item.IdCargo }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.IdCargo })
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdCargo }) |
+                @Html.ActionLink("Detalhes", "Details", new { id=item.IdCargo }) |
+                @Html.ActionLink("Deletar", "Delete", new { id=item.IdCargo })
             </td>
         </tr>
     }

@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class CarteiraDeMotoristaDao: IDao<CarteiraDeMotorista>
+    public class CarteiraDeMotoristaDao: IDao<CarteiraDeMotorista>
     {
         private EntidadesContext contexto;
 
@@ -38,6 +38,11 @@ namespace Dao
             }
         }
 
+        public CarteiraDeMotorista BuscaPorCnh(string cnh)
+        {
+            return contexto.CarteirasDeMotorista.FirstOrDefault(c => c.Cnh == cnh);
+        }
+
         public void Excluir(CarteiraDeMotorista carteira)
         {
             try
@@ -61,6 +66,36 @@ namespace Dao
             {
                 throw e;
             }
+        }
+
+        public CarteiraDeMotorista BuscaCnh(string cnh)
+        {
+            return contexto.CarteirasDeMotorista.FirstOrDefault(c => c.Cnh == cnh);
+        }
+
+        public void Editar(string cnh, CarteiraDeMotorista carteira)
+        {
+            try
+            {
+                CarteiraDeMotorista antigo = BuscaCnh(cnh);
+
+                if (antigo == null)
+                {
+                    throw new Exception("Não foi possível localizar a marca informada.");
+                }
+
+                antigo = carteira;
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public CarteiraDeMotorista BuscaPorId(int id)
+        {
+            return contexto.CarteirasDeMotorista.Find(id);
         }
 
         public void FecharConexao()

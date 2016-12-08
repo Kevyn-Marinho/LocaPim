@@ -121,6 +121,35 @@ namespace Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost, ActionName("Login")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login([Bind(Include = "Login,Senha")] Usuario usuario)
+        {
+            Business.UsuarioCtl controller = new Business.UsuarioCtl();
+            Usuario login = controller.Login(usuario);
+
+            if (login == null) {
+                return RedirectToAction("Login","Usuarios");
+            }
+
+            Session["Usuario"] = login;
+            return RedirectToAction("Index","Home");
+        }
+
+        public ActionResult Logout()
+        {
+            Session["Usuario"] = null;
+            Session.Abandon();
+
+            return RedirectToAction("Login");
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

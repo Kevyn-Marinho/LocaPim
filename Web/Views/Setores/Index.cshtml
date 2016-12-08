@@ -14,7 +14,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <button class="btn btn-success novo">Novo</button>
     </p>
     <table class="table">
         <tr>
@@ -42,13 +42,51 @@
                 @Html.DisplayFor(modelItem => item.Ativo)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdSetor }) |
-                @Html.ActionLink("Details", "Details", new { id=item.IdSetor }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.IdSetor })
+                <button class="btn btn-default Editar" data-Id="@item.IdSetor">Editar</button>
+                <button class="btn btn-default detalhe" data-Id="@item.IdSetor">Detalhes</button>
+                <button class="btn btn-default excluir" data-Id="@item.IdSetor">Detalhes</button>
             </td>
         </tr>
     }
     
     </table>
+    <div class="modal" id="modal">
+
+    </div>
+    <script>
+        $(function () {
+            $('.detalhe').click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("Setores/Details?id=" + id);
+                $('#modal').modal('show');
+            })
+        });
+
+        $(function () {
+            $('.Editar').click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("Setores/Edit?id=" + id);
+                $('#modal').modal('show');
+            })
+        });
+
+        $(function () {
+            $('.excluir').click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("Setores/Delete?id=" + id);
+                $('#modal').modal('show');
+            })
+        });
+
+        $(function () {
+            $('.novo').click(function () {
+                $("#modal").load("Create");
+                $('#modal').modal('show');
+            })
+        });
+
+
+
+    </script>
 </body>
 </html>

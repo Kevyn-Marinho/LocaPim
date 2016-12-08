@@ -30,6 +30,7 @@ D:\Projetos\PIM\Web\bin\Web.dll.config
 D:\Projetos\PIM\Web\bin\Web.dll
 D:\Projetos\PIM\Web\bin\Web.pdb
 D:\Projetos\PIM\Web\bin\Antlr3.Runtime.dll
+D:\Projetos\PIM\Web\bin\Dao.dll
 D:\Projetos\PIM\Web\bin\EntityFramework.dll
 D:\Projetos\PIM\Web\bin\EntityFramework.SqlServer.dll
 D:\Projetos\PIM\Web\bin\Microsoft.AI.Agent.Intercept.dll
@@ -54,6 +55,7 @@ D:\Projetos\PIM\Web\bin\System.Web.WebPages.Deployment.dll
 D:\Projetos\PIM\Web\bin\System.Web.WebPages.dll
 D:\Projetos\PIM\Web\bin\System.Web.WebPages.Razor.dll
 D:\Projetos\PIM\Web\bin\WebGrease.dll
+D:\Projetos\PIM\Web\bin\Dao.pdb
 D:\Projetos\PIM\Web\bin\Model.pdb
 D:\Projetos\PIM\Web\bin\Antlr3.Runtime.pdb
 D:\Projetos\PIM\Web\bin\Microsoft.AI.DependencyCollector.xml
@@ -76,5 +78,5 @@ D:\Projetos\PIM\Web\bin\Microsoft.AspNet.Identity.Core.xml
 D:\Projetos\PIM\Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Projetos\PIM\Web\obj\Debug\Web.dll
 D:\Projetos\PIM\Web\obj\Debug\Web.pdb
-D:\Projetos\PIM\Web\bin\Dao.dll
-D:\Projetos\PIM\Web\bin\Dao.pdb
+D:\Projetos\PIM\Web\bin\Business.dll
+D:\Projetos\PIM\Web\bin\Business.pdb

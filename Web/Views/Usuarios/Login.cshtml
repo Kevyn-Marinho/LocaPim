@@ -1,0 +1,69 @@
+﻿@model Model.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        #login-image{
+            background-image:url("../../Content/images/carroestrada.jpg");
+            height:100vh;
+            background-repeat:no-repeat;
+        }
+        #dvLogin{
+            margin-top:10%;
+        }
+        #dvLogin-Logo{
+            margin-left:37%;
+        }
+    </style>
+</head>
+<body>
+    @Styles.Render("~/Content/css")
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div id="login-image" class="col-md-6">
+                </div>
+                <div id="dvLogin" class="col-md-6">
+                    <div>
+                        <img id="dvLogin-Logo" src="~/Content/images/logo.png" />
+                    </div>
+                    <div >
+                        <div class="form-group">
+                            <span class="control-label col-md-2">Login</span>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <span class="control-label col-md-2">Senha</span>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" , type="password"} })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div>
+                        <input type="submit" id="btnLogar" class="btn btn-success" value="Logar" />
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+}
+</body>
+</html>

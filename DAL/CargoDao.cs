@@ -25,8 +25,13 @@ namespace Dao
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
+        }
+
+        public Cargo BuscaPorId(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void SaveChanges()
@@ -37,7 +42,23 @@ namespace Dao
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
+            }
+        }
+
+        public void Editar(Cargo cargoAntigo, Cargo cargo)
+        {
+            try
+            {
+                if (cargoAntigo != null)
+                {
+                    cargoAntigo = cargo;
+                    contexto.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -50,9 +71,10 @@ namespace Dao
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
+
         public IList<Cargo> Listar()
         {
             try

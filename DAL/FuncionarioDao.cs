@@ -62,6 +62,15 @@ namespace Dao
             }
         }
 
+        public void Editar(int id, Funcionario funcionario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Funcionario BuscaPorId(int id) {
+            return contexto.Funcionarios.FirstOrDefault(u => u.Id == id);
+        }
+
         public void FecharConexao()
         {
             contexto.Dispose();

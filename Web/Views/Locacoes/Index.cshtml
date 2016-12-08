@@ -1,55 +1,47 @@
 ﻿@model IEnumerable<Model.Locacao>
 
 @{
-    ViewBag.Title = "Locações";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Index</h2>
 
-<!DOCTYPE html>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Carro.Chassi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cartao.NumeroCartao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </th>
+        <th></th>
+    </tr>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Carro.Chassi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCliente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCartao)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Carro.Chassi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCartao)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdLocacao }) |
-                @Html.ActionLink("Details", "Details", new { id=item.IdLocacao }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.IdLocacao })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carro.Chassi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cartao.NumeroCartao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdLocacao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdLocacao }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdLocacao }) |
+            @Html.ActionLink("Devolver", "Devolucao", new { id = item.IdLocacao })
+        </td>
+    </tr>
+}
+
+</table>

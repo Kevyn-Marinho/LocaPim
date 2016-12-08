@@ -12,14 +12,17 @@ namespace Model
     {   
         [Key]
         public int IdContato { get; set; }
+
         [Required]
         public string contato { get; set; }
-        public bool Ativo { get; set; }
-        [Required]
-        public Pessoa Pessoa { get; set; }
-        public int IdPessoa { get; set; }
 
-        public TipoDeContato TipoContato { get; set; }
+        public bool Ativo { get; set; }
+
+        [Required]
+        public int IdPessoa { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
+
         public int IdTipoDeContato { get; set; }
+        public virtual TipoDeContato TipoContato { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class MarcaDao : IDao<Marca>
+    public class MarcaDao : IDao<Marca>
     {
         private EntidadesContext contexto;
 
@@ -14,6 +14,12 @@ namespace Dao
         {
             this.contexto = contexto;
         }
+
+        public Marca BuscaPorId(int id)
+        {
+            return contexto.Marcas.First(u => u.IdMarcaCarro == id);
+        }
+
         public void Adicionar(Marca marca)
         {
             try
@@ -66,6 +72,28 @@ namespace Dao
             }
 
         }
+
+        public void Alterar(int idMarcaAntiga, Marca marca)
+        {
+
+            try
+            {
+                Marca antiga = this.BuscaPorId(idMarcaAntiga);
+                if (antiga == null)
+                {
+                    throw new Exception("Não foi possível localizar a marca informada.");
+                }
+
+                antiga = marca;
+                contexto.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+
+        }
+
     }
 }
 

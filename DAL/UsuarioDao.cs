@@ -21,9 +21,11 @@ namespace Dao
             return contexto.Usuarios.FirstOrDefault(u => u.IdUsuario == id);
         }
 
-        public Usuario login(Usuario usuario)
+        public Usuario login(Usuario login)
         {
-            return contexto.Usuarios.FirstOrDefault(u => u.Login == usuario.Login && u.Senha == usuario.Senha);
+            Usuario usuario = new Usuario();
+            usuario = contexto.Usuarios.SingleOrDefault(u => u.Login == login.Login && u.Senha == login.Senha);
+            return usuario;
         }
 
         public void Adicionar(Usuario usuario)

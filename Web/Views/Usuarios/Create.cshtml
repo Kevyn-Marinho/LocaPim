@@ -1,9 +1,5 @@
 ﻿@model Model.Usuario
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -16,10 +12,10 @@
     @Scripts.Render("~/bundles/jqueryval")
     
     
-    @using (Html.BeginForm()) 
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
+
         <div class="form-horizontal">
             <h4>Usuario</h4>
             <hr />
@@ -35,7 +31,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", type= "password" } })
                     @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -61,11 +57,17 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Id, "Id", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
+                    @*<select>
+                        @foreach (Model.Funcionario func in ViewBag.Funcionarios)
+                        {
+                             <option id="model.Id" value="@func.Id" >@func.Nome @func.Sobrenome</option>
+                        }
+                    </select>*@
                     @Html.DropDownList("Id", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+            
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />

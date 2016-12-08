@@ -13,6 +13,7 @@ namespace Model
     {
         [Key]
         public int IdPais { get; set; }
+
         [Required]
         public String Nome { get; set; }
 

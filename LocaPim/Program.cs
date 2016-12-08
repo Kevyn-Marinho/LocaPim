@@ -15,7 +15,8 @@ namespace LocaPim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LocaPim.Login.Login());
+            //Application.Run(new LocaPim.Login.frmLogin());
+            Application.Run(new LocaPim.Cadastro.frmCadastrarCliente());
         }
     }
 }

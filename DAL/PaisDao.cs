@@ -41,5 +41,24 @@ namespace Dao
             return contexto.Paises.FirstOrDefault(u=> u.Nome.Equals(nome) );
         }
 
+        public void Editar(int id, Pais pais)
+        {
+            try
+            {
+                Pais antigo = BuscaPorId(id);
+                if (antigo == null)
+                {
+                    throw new Exception("Não foi possível localizar o pais informada.");
+                }
+
+                antigo = pais;
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
     }
 }

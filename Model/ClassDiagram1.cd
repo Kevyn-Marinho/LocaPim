@@ -1,144 +1,197 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
-  <Class Name="Model.Cargo" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Model.Cargo">
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAIABAAAEAAEAAAAAAAAAAAAAAAAAEAEAAAA=</HashCode>
+      <HashCode>AAAIAAAAAIQBAAAEAAEAAAAAAAAAAAAAAAAAEAEAAAA=</HashCode>
       <FileName>Cargo.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Funcionario" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Carro" Collapsed="true">
-    <Position X="7" Y="0.5" Width="1.5" />
+  <Class Name="Model.Carro">
+    <Position X="11.5" Y="6.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAQAABABZIAAACAAAAAAAAAAAEAAAABAAAgAAAAAAAI=</HashCode>
+      <HashCode>AAQAAAABRJEAACAAAAAQAAAAAEAAAABAAAAAAAAAAAI=</HashCode>
       <FileName>Carro.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Locacao" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.CartaoDeCredito" Collapsed="true">
-    <Position X="8.75" Y="0.5" Width="1.5" />
+  <Class Name="Model.CartaoDeCredito">
+    <Position X="8.75" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAACAAABAAAIAAAAGAEAgAAAAAAAAAAAAABBAAIAA=</HashCode>
       <FileName>CartaoDeCredito.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.CarteiraDeMotorista" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+  <Class Name="Model.CarteiraDeMotorista">
+    <Position X="5.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>CarteiraDeMotorista.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.CategoriaCarro" Collapsed="true">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+  <Class Name="Model.CategoriaCarro">
+    <Position X="17.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAABBAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAABBBAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>CategoriaCarro.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ModeloCarro" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Cidade" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+  <Class Name="Model.Cidade">
+    <Position X="10" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIg=</HashCode>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEIg=</HashCode>
       <FileName>Cidade.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endereco" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Cliente" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+  <Class Name="Model.Cliente">
+    <Position X="5.5" Y="3.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgBAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAQAAAABAAAAAACAAAgBAAAAAA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CartaoDeCredito" />
+      <Property Name="CarteiraDeMotorista1" />
+      <Property Name="Locacao" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Contato" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
+  <Class Name="Model.Contato">
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAACAAAAAAAAAAAABEAAAABAAAAAgAAAAAgAAAAAAA=</HashCode>
       <FileName>Contato.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.Endereco" Collapsed="true">
-    <Position X="8.75" Y="1.5" Width="1.5" />
+  <Class Name="Model.Endereco">
+    <Position X="7.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAACAAAAAAAACIAAAAAAACAAIAAAAAAAAAAAAABAIA=</HashCode>
       <FileName>Endereco.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.Estado" Collapsed="true">
-    <Position X="10.5" Y="1.5" Width="1.5" />
+  <Class Name="Model.Estado">
+    <Position X="12.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAQACAAAAAAAAACAAAgAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Estado.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cidade" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Funcionario" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+  <Class Name="Model.Funcionario">
+    <Position X="3" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAA=</HashCode>
       <FileName>Funcionario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.Locacao" Collapsed="true">
-    <Position X="12.25" Y="1.5" Width="1.5" />
+  <Class Name="Model.Locacao">
+    <Position X="8.5" Y="6.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAIAAgAAAAAiAEAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Locacao.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.Marca" Collapsed="true">
-    <Position X="5.25" Y="2.5" Width="1.5" />
+  <Class Name="Model.Marca">
+    <Position X="14.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAABEBAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Marca.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ModeloCarro" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.ModeloCarro" Collapsed="true">
-    <Position X="7" Y="2.5" Width="1.5" />
+  <Class Name="Model.ModeloCarro">
+    <Position X="14.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAIAAAAAAgAAQAAAAAAAAAAAAAAAAAAAEAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAgAAQAAAAAAAAAAAAAAAgAAAEAAAI=</HashCode>
       <FileName>ModeloCarro.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Carro" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.OperadoraCartao" Collapsed="true">
-    <Position X="8.75" Y="2.5" Width="1.5" />
+  <Class Name="Model.OperadoraCartao">
+    <Position X="12.25" Y="3.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAEAAAAAAEAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>OperadoraCartao.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CartaoDeCredito" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Pais" Collapsed="true">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+  <Class Name="Model.Pais">
+    <Position X="14.75" Y="1" Width="1.5" />
+    <AssociationLine Name="Estado" Type="Model.Estado" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.75" Y="1.688" />
+        <Point X="14.375" Y="1.688" />
+        <Point X="14.375" Y="1.5" />
+        <Point X="13.75" Y="1.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAg=</HashCode>
       <FileName>Pais.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Estado" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Pessoa" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+  <Class Name="Model.Pessoa">
+    <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAEAAAIAIAIAAAAAAAAAAAGAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAEAAAAAEAAAIAIAIAAAAAAAAAAAGAEAA=</HashCode>
       <FileName>Pessoa.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endereco" />
+      <Property Name="Contato" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Setor" Collapsed="true">
-    <Position X="12.25" Y="2.5" Width="1.5" />
+  <Class Name="Model.Setor">
+    <Position X="0.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAEAAEAAAAAAAAAAAAAAAAAEAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAEAAAAAAAAAAAABAAAAEAEAAAA=</HashCode>
       <FileName>Setor.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cargo" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.TipoDeContato" Collapsed="true">
-    <Position X="5.25" Y="3.5" Width="1.5" />
+  <Class Name="Model.TipoDeContato">
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>TipoDeContato.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Contato" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Model.Usuario" Collapsed="true">
-    <Position X="7" Y="3.5" Width="1.5" />
+  <Class Name="Model.Usuario">
+    <Position X="3.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAQAAAQAAAAAIAEAAAAAACAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Funcionario1" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class CidadeDao : IDao<Cidade>
+    public class CidadeDao : IDao<Cidade>
     {
         private EntidadesContext contexto;
 
@@ -25,6 +25,12 @@ namespace Dao
                 throw e;
             }
         }
+
+        public Cidade BuscaPorId(int id)
+        {
+            return contexto.Cidades.Find(id);
+        }
+
         public void SaveChanges()
         {
             try
@@ -65,7 +71,32 @@ namespace Dao
         public void FecharConexao()
         {
             contexto.Dispose();
-        }    
+        }
+                
+        public void Editar(int id, Cidade Cidade)
+        {
+            try
+            {
+                Cidade cidadeAntiga = BuscaPorId(id);
+
+                if(cidadeAntiga == null)
+                {
+                    throw new Exception("Não foi possível encontrar a cidade informada");
+                }
+
+                cidadeAntiga = Cidade;
+
+                SaveChanges();
+            }catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public Cidade BuscaPorNome(string nomeCidade)
+        {
+            return contexto.Cidades.FirstOrDefault(c => c.NomeCidade == nomeCidade);
+        }
     }
 }
 

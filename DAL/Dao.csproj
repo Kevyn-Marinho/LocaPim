@@ -69,18 +69,6 @@
       <DependentUpon>LocaPimDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MarcaDao.cs" />
-    <Compile Include="Migrations\201611051842517_CorrecaoKeys.cs" />
-    <Compile Include="Migrations\201611051842517_CorrecaoKeys.Designer.cs">
-      <DependentUpon>201611051842517_CorrecaoKeys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611180322511_CorrecaoIdFuncionario.cs" />
-    <Compile Include="Migrations\201611180322511_CorrecaoIdFuncionario.Designer.cs">
-      <DependentUpon>201611180322511_CorrecaoIdFuncionario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611180427056_CorreçãoModel.cs" />
-    <Compile Include="Migrations\201611180427056_CorreçãoModel.Designer.cs">
-      <DependentUpon>201611180427056_CorreçãoModel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModeloCarroDao.cs" />
     <Compile Include="OperadoraCartaoDao.cs" />
@@ -92,6 +80,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SetorDao.cs" />
+    <Compile Include="TipoDeContatoDao.cs" />
     <Compile Include="UsuarioDao.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,17 +107,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611051842517_CorrecaoKeys.resx">
-      <DependentUpon>201611051842517_CorrecaoKeys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611180322511_CorrecaoIdFuncionario.resx">
-      <DependentUpon>201611180322511_CorrecaoIdFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611180427056_CorreçãoModel.resx">
-      <DependentUpon>201611180427056_CorreçãoModel.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

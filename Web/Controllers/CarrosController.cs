@@ -18,7 +18,7 @@ namespace Web.Controllers
         // GET: Carros
         public ActionResult Index()
         {
-            var carros = db.Carros.Include(c => c.Modelo);
+            var carros = db.Carros.Include(c => c.ModeloCarro);
             return View(carros.ToList());
         }
 
@@ -49,7 +49,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdCarro,Chassi,Placa,DataFabricacao,DataAquisicao,Locado,ValorDiaria,QuantidadeLocacoes,IdModeloCarro,IdMarca")] Carro carro)
+        public ActionResult Create([Bind(Include = "IdCarro,Chassi,Placa,DataFabricacao,DataAquisicao,Locado,ValorDiaria,QuantidadeLocacoes,IdModeloCarro,IdMarcaCarro")] Carro carro)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdCarro,Chassi,Placa,DataFabricacao,DataAquisicao,Locado,ValorDiaria,QuantidadeLocacoes,IdModeloCarro,IdMarca")] Carro carro)
+        public ActionResult Edit([Bind(Include = "IdCarro,Chassi,Placa,DataFabricacao,DataAquisicao,Locado,ValorDiaria,QuantidadeLocacoes,IdModeloCarro,IdMarcaCarro")] Carro carro)
         {
             if (ModelState.IsValid)
             {

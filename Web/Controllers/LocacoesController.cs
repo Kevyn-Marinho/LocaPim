@@ -18,7 +18,7 @@ namespace Web.Controllers
         // GET: Locacoes
         public ActionResult Index()
         {
-            var locacoes = db.Locacoes.Include(l => l.Carro);
+            var locacoes = db.Locacoes.Include(l => l.Carro).Include(l => l.Cartao).Include(l => l.Cliente);
             return View(locacoes.ToList());
         }
 
@@ -40,7 +40,9 @@ namespace Web.Controllers
         // GET: Locacoes/Create
         public ActionResult Create()
         {
-            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Chassi");
+            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Placa");
+            ViewBag.IdCartaoDeCredito = new SelectList(db.CartoesDeCredito, "IdCartaoDeCredito", "NumeroCartao");
+            ViewBag.Id = new SelectList(db.Clientes, "Id", "Nome");
             return View();
         }
 
@@ -49,7 +51,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdLocacao,IdCliente,IdCartao,IdCarro")] Locacao locacao)
+        public ActionResult Create([Bind(Include = "IdLocacao,Id,IdCartaoDeCredito,IdCarro,DataRetirada,DataDevolucao,Devolvido")] Locacao locacao)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +60,9 @@ namespace Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Chassi", locacao.IdCarro);
+            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Placa", locacao.IdCarro);
+            ViewBag.IdCartaoDeCredito = new SelectList(db.CartoesDeCredito, "IdCartaoDeCredito", "NumeroCartao", locacao.IdCartaoDeCredito);
+            ViewBag.Id = new SelectList(db.Clientes, "Id", "Nome", locacao.Id);
             return View(locacao);
         }
 
@@ -74,7 +78,9 @@ namespace Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Chassi", locacao.IdCarro);
+            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Placa", locacao.IdCarro);
+            ViewBag.IdCartaoDeCredito = new SelectList(db.CartoesDeCredito, "IdCartaoDeCredito", "NumeroCartao", locacao.IdCartaoDeCredito);
+            ViewBag.Id = new SelectList(db.Clientes, "Id", "Nome", locacao.Id);
             return View(locacao);
         }
 
@@ -83,7 +89,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdLocacao,IdCliente,IdCartao,IdCarro")] Locacao locacao)
+        public ActionResult Edit([Bind(Include = "IdLocacao,Id,IdCartaoDeCredito,IdCarro,DataRetirada,DataDevolucao,Devolvid")] Locacao locacao)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +97,9 @@ namespace Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Chassi", locacao.IdCarro);
+            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Placa", locacao.IdCarro);
+            ViewBag.IdCartaoDeCredito = new SelectList(db.CartoesDeCredito, "IdCartaoDeCredito", "NumeroCartao", locacao.IdCartaoDeCredito);
+            ViewBag.Id = new SelectList(db.Clientes, "Id", "Nome", locacao.Id);
             return View(locacao);
         }
 
@@ -119,6 +127,37 @@ namespace Web.Controllers
             db.Locacoes.Remove(locacao);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult BuscaCliente(string cpf)
+        {
+            //Consulta
+            var resultado = db.Clientes.Single(u => u.Cpf == cpf);
+            if(resultado != null) { 
+                ViewBag.IdCartaoDeCredito = new SelectList(db.CartoesDeCredito.Select(c => c.Cliente == resultado ) , "IdCartaoDeCredito", "NumeroCartao");
+                ViewBag.Id = new SelectList(db.Clientes.Select(u => u.Cpf == cpf), "Id", "Nome"+ " " + "Cpf", "Id");
+            }
+            //Serialização para Json
+            return Json(resultado);
+        }
+
+        public ActionResult Devolucao(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Locacao locacao = db.Locacoes.Find(id);
+            if (locacao == null)
+            {
+                return HttpNotFound();
+            }
+            locacao.Devolvido = true;
+            ViewBag.IdCarro = new SelectList(db.Carros, "IdCarro", "Placa", locacao.IdCarro);
+            ViewBag.IdCartaoDeCredito = new SelectList(db.CartoesDeCredito, "IdCartaoDeCredito", "NumeroCartao", locacao.IdCartaoDeCredito);
+            ViewBag.Id = new SelectList(db.Clientes, "Id", "Nome", locacao.Id);
+            return View(locacao);
         }
 
         protected override void Dispose(bool disposing)

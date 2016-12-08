@@ -399,8 +399,8 @@ $.extend( $.validator, {
 
 			function delegate( event ) {
 
-				// Set form expando on contenteditable
-				if ( !this.form && this.hasAttribute( "contenteditable" ) ) {
+				// Set form expando on contentEditable
+				if ( !this.form && this.hasAttribute( "contentEditable" ) ) {
 					this.form = $( this ).closest( "form" )[ 0 ];
 				}
 
@@ -417,7 +417,7 @@ $.extend( $.validator, {
 					":text, [type='password'], [type='file'], select, textarea, [type='number'], [type='search'], " +
 					"[type='tel'], [type='url'], [type='email'], [type='datetime'], [type='date'], [type='month'], " +
 					"[type='week'], [type='time'], [type='datetime-local'], [type='range'], [type='color'], " +
-					"[type='radio'], [type='checkbox'], [contenteditable]", delegate )
+					"[type='radio'], [type='checkbox'], [contentEditable]", delegate )
 
 				// Support: Chrome, oldIE
 				// "select" is provided as event.target when clicking a option
@@ -623,17 +623,17 @@ $.extend( $.validator, {
 
 			// Select all valid inputs inside the form (no submit or reset buttons)
 			return $( this.currentForm )
-			.find( "input, select, textarea, [contenteditable]" )
+			.find( "input, select, textarea, [contentEditable]" )
 			.not( ":submit, :reset, :image, :disabled" )
 			.not( this.settings.ignore )
 			.filter( function() {
-				var name = this.name || $( this ).attr( "name" ); // For contenteditable
+				var name = this.name || $( this ).attr( "name" ); // For contentEditable
 				if ( !name && validator.settings.debug && window.console ) {
 					console.error( "%o has no name assigned", this );
 				}
 
-				// Set form expando on contenteditable
-				if ( this.hasAttribute( "contenteditable" ) ) {
+				// Set form expando on contentEditable
+				if ( this.hasAttribute( "contentEditable" ) ) {
 					this.form = $( this ).closest( "form" )[ 0 ];
 				}
 
@@ -690,7 +690,7 @@ $.extend( $.validator, {
 				return element.validity.badInput ? "NaN" : $element.val();
 			}
 
-			if ( element.hasAttribute( "contenteditable" ) ) {
+			if ( element.hasAttribute( "contentEditable" ) ) {
 				val = $element.text();
 			} else {
 				val = $element.val();
@@ -1128,7 +1128,7 @@ $.extend( $.validator, {
 		dateISO: { dateISO: true },
 		number: { number: true },
 		digits: { digits: true },
-		creditcard: { creditcard: true }
+		crEditcard: { crEditcard: true }
 	},
 
 	addClassRules: function( className, rules ) {

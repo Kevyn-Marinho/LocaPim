@@ -12,7 +12,12 @@ namespace Model
     {
         [Key]
         public int IdCidade { get; set; }
+
+        [Required]
         public String NomeCidade { get; set; }
-        public Estado Estado { get; set; }
+
+        [Required]
+        public int IdEstado { get; set; }
+        public virtual Estado Estado { get; set; }
     }
 }

@@ -18,7 +18,8 @@ namespace Web.Controllers
         // GET: ModelosCarros
         public ActionResult Index()
         {
-            return View(db.Modelo.ToList());
+
+            return View(db.Modelo.Include("Marcas").Include("Categoria").ToList());
         }
 
         // GET: ModelosCarros/Details/5
@@ -28,17 +29,20 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ModeloCarro modeloCarro = db.Modelo.Find(id);
+            ModeloCarro modeloCarro = db.Modelo.Include("Marcas").Include("Categoria").Single(m => m.IdModeloCarro == id);
             if (modeloCarro == null)
             {
                 return HttpNotFound();
             }
+
             return View(modeloCarro);
         }
 
         // GET: ModelosCarros/Create
         public ActionResult Create()
         {
+            ViewBag.IdMarcaCarro = new SelectList(db.Marcas, "IdMarcaCarro", "Nome");
+            ViewBag.IdCategoriaCarro = new SelectList(db.Categorias, "IdCategoriaCarro", "Nome");
             return View();
         }
 
@@ -47,7 +51,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdModeloCarro,Nome,IdMarca,IdCategoria")] ModeloCarro modeloCarro)
+        public ActionResult Create([Bind(Include = "IdModeloCarro,Nome,IdMarcaCarro,IdCategoriaCarro")] ModeloCarro modeloCarro)
         {
             if (ModelState.IsValid)
             {
@@ -71,6 +75,9 @@ namespace Web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdMarcaCarro = new SelectList(db.Marcas, "IdMarcaCarro", "Nome");
+            ViewBag.IdCategoriaCarro = new SelectList(db.Categorias, "IdCategoriaCarro", "Nome");
+
             return View(modeloCarro);
         }
 
@@ -79,7 +86,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdModeloCarro,Nome,IdMarca,IdCategoria")] ModeloCarro modeloCarro)
+        public ActionResult Edit([Bind(Include = "IdModeloCarro,Nome,IdMarcaCarro,IdCategoriaCarro")] ModeloCarro modeloCarro)
         {
             if (ModelState.IsValid)
             {
@@ -97,11 +104,12 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ModeloCarro modeloCarro = db.Modelo.Find(id);
+            ModeloCarro modeloCarro = db.Modelo.Include("Marcas").Include("Categoria").Single(m => m.IdModeloCarro == id);
             if (modeloCarro == null)
             {
                 return HttpNotFound();
             }
+
             return View(modeloCarro);
         }
 

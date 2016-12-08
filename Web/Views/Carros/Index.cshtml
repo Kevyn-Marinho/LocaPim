@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<Model.Carro>
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -13,12 +12,12 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Novo", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Modelo.Nome)
+                @Html.DisplayNameFor(model => model.ModeloCarro.Nome)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Chassi)
@@ -42,7 +41,7 @@
                 @Html.DisplayNameFor(model => model.QuantidadeLocacoes)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdMarca)
+                @Html.DisplayNameFor(model => model.IdMarcaCarro)
             </th>
             <th></th>
         </tr>
@@ -50,7 +49,7 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Modelo.Nome)
+                @Html.DisplayFor(modelItem => item.ModeloCarro.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Chassi)
@@ -74,7 +73,7 @@
                 @Html.DisplayFor(modelItem => item.QuantidadeLocacoes)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdMarca)
+                @Html.DisplayFor(modelItem => item.IdMarcaCarro)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.IdCarro }) |

@@ -13,16 +13,26 @@ namespace Model
     {
         [Key]
         public int IdLocacao { get; set; }
-        public Cliente Cliente { get; set; }
+
+        [Required]
         public int Id { get; set; }
+        public virtual Cliente Cliente { get; set; }
 
         [Required]
-        public CartaoDeCredito Cartao { get; set; }
         public int IdCartaoDeCredito { get; set; }
+        public virtual CartaoDeCredito Cartao { get; set; }
 
         [Required]
-        public Carro Carro { get; set; }
         public int IdCarro { get; set; }
-    
+        public virtual Carro Carro { get; set; }
+
+        [Required]
+        public DateTime DataRetirada { get; set; }
+
+        public DateTime DataDevolucao { get; set; }
+
+        public bool Devolvido { get; set; }
+
+
     }
 }

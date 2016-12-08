@@ -11,9 +11,11 @@ namespace Model
     {
         [Key]
         public int IdOperadoraCarta { get; set; }
+
         [Required]
         public string Bandeira { get; set; }
-        public bool Ativo { get; set; } 
+
+        public bool Ativo { get; set; }
 
     }
 }

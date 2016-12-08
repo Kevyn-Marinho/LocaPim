@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class CategoriaCarroDao : IDao<CategoriaCarro>
+    public class CategoriaCarroDao : IDao<CategoriaCarro>
     {
         private EntidadesContext contexto;
 
@@ -61,6 +61,33 @@ namespace Dao
             {
                 throw e;
             }
+        }
+
+        public void Alterar(int idCategoriaAntiga, CategoriaCarro cat)
+        {
+
+            try
+            {
+                CategoriaCarro antigo = BuscaPorId(idCategoriaAntiga);
+                if (antigo == null)
+                {
+                    throw new Exception("Não foi possível localizar a marca informada.");
+                }
+
+                antigo = cat;
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+
+        public CategoriaCarro BuscaPorId(int id)
+        {
+            return contexto.Categorias.FirstOrDefault(c => c.IdCategoriaCarro == id);
         }
 
         public void FecharConexao()

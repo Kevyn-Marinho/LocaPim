@@ -12,7 +12,11 @@ namespace Model
     {
         [Key]
         public int IdCategoriaCarro { get; set; }
+
+        [Required]
         public string Nome { get; set; }
+
         public string Descricao { get; set; }
+
     }
 }

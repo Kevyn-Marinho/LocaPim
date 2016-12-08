@@ -24,11 +24,11 @@ namespace Model
         public bool Ativo { get; set; }
 
         [Required]
-        public Cliente Cliente { get; set; }
         public int IdCliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
 
         [Required]
-        public virtual OperadoraCartao Operadora { get; set; }
         public int IdOperadoraCartao { get; set; }
+        public virtual OperadoraCartao Operadora { get; set; }
     }
 }

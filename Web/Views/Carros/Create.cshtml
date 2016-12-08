@@ -1,7 +1,7 @@
 ﻿@model Model.Carro
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -37,17 +37,17 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.DataFabricacao, htmlAttributes: new { @class = "control-label col-md-2" })
+                <strong><span class="control-label col-md-2">Data de Fabricação:</span></strong>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.DataFabricacao, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.DataFabricacao, new { htmlAttributes = new { @class = "form-control" , type ="Date" } })
                     @Html.ValidationMessageFor(model => model.DataFabricacao, "", new { @class = "text-danger" })
                 </div>
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.DataAquisicao, htmlAttributes: new { @class = "control-label col-md-2" })
+                <strong><span class="control-label col-md-2">Data de Aquisição:</span></strong>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.DataAquisicao, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.DataAquisicao, new { htmlAttributes = new { @class = "form-control" , type="Date"} })
                     @Html.ValidationMessageFor(model => model.DataAquisicao, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -63,7 +63,7 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.ValorDiaria, htmlAttributes: new { @class = "control-label col-md-2" })
+                <strong><span class="control-label col-md-2">Valor da diária:</span></strong>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.ValorDiaria, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.ValorDiaria, "", new { @class = "text-danger" })
@@ -71,7 +71,7 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.QuantidadeLocacoes, htmlAttributes: new { @class = "control-label col-md-2" })
+                <strong><span class="control-label col-md-2">Quantidade de locações:</span></strong>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.QuantidadeLocacoes, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.QuantidadeLocacoes, "", new { @class = "text-danger" })
@@ -79,21 +79,14 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.IdModeloCarro, "IdModeloCarro", htmlAttributes: new { @class = "control-label col-md-2" })
+                <strong><span class="control-label col-md-2">Modelo:</span></strong>
                 <div class="col-md-10">
                     @Html.DropDownList("IdModeloCarro", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IdModeloCarro, "", new { @class = "text-danger" })
                 </div>
             </div>
     
-            <div class="form-group">
-                @Html.LabelFor(model => model.IdMarca, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.IdMarca, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.IdMarca, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
+            
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />

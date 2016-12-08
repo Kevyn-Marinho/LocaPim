@@ -1,7 +1,7 @@
 ﻿@model Model.Cliente
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -66,11 +66,11 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.IdCliente)
+                @Html.DisplayNameFor(model => model.Id)
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.IdCliente)
+                @Html.DisplayFor(model => model.Id)
             </dd>
     
             <dt>

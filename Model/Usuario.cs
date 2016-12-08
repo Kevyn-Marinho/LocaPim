@@ -11,21 +11,23 @@ namespace Model
     {
         [Key]
         public int IdUsuario { get; set; }
-        public string Login { get; set; }
-        public string Senha { get; set; }
-        public int NivelDeAcesso { get; set; }
-        public bool Ativo { get; set; }
-       
-        public Funcionario Funcionario { get; set; }
-        public int Id { get; set; }
 
-        public Usuario(string login, string senha)
-        {
-            this.Login = login;
+        public string Login { get; set; }
+
+        public string Senha { get; set; }
+
+        public int NivelDeAcesso { get; set; }
+
+        public bool Ativo { get; set; }
+
+        public int Id { get; set; }
+        public virtual Funcionario Funcionario { get; set; }
+
+        public Usuario() { }
+
+        public Usuario(String nomeUsuario, String senha) {
+            this.Login = nomeUsuario;
             this.Senha = senha;
         }
-        public Usuario() {
-        }
-        
     }
 }

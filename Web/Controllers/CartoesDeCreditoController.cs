@@ -18,7 +18,7 @@ namespace Web.Controllers
         // GET: CartoesDeCredito
         public ActionResult Index()
         {
-            return View(db.CartoesDeCredito.Include(c => c.IdOperadoraCartao).ToList());
+            return View(db.CartoesDeCredito.Include("Cliente").ToList());
         }
 
         // GET: CartoesDeCredito/Details/5
@@ -28,17 +28,18 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CartaoDeCredito cartaoDeCredito = db.CartoesDeCredito.Find(id);
-            if (cartaoDeCredito == null)
+            CartaoDeCredito CartaoDeCredito = db.CartoesDeCredito.Find(id);
+            if (CartaoDeCredito == null)
             {
                 return HttpNotFound();
             }
-            return View(cartaoDeCredito);
+            return View(CartaoDeCredito);
         }
 
         // GET: CartoesDeCredito/Create
         public ActionResult Create()
         {
+            ViewBag.IdCliente = new SelectList(db.Clientes, "IdCliente", "Nome");
             return View();
         }
 
@@ -47,16 +48,16 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdCartaoDeCredito,Validade,NumeroCartao,CodigoSeguranca,NomeCartao,Ativo,IdCliente,IdOperadoraCartao")] CartaoDeCredito cartaoDeCredito)
+        public ActionResult Create([Bind(Include = "IdCartaoDeCredito,Validade,NumeroCartao,CodigoSeguranca,NomeCartao,Ativo,Id,IdOperadoraCartao")] CartaoDeCredito CartaoDeCredito)
         {
             if (ModelState.IsValid)
             {
-                db.CartoesDeCredito.Add(cartaoDeCredito);
+                db.CartoesDeCredito.Add(CartaoDeCredito);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cartaoDeCredito);
+            return View(CartaoDeCredito);
         }
 
         // GET: CartoesDeCredito/Edit/5
@@ -66,12 +67,12 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CartaoDeCredito cartaoDeCredito = db.CartoesDeCredito.Find(id);
-            if (cartaoDeCredito == null)
+            CartaoDeCredito CartaoDeCredito = db.CartoesDeCredito.Find(id);
+            if (CartaoDeCredito == null)
             {
                 return HttpNotFound();
             }
-            return View(cartaoDeCredito);
+            return View(CartaoDeCredito);
         }
 
         // POST: CartoesDeCredito/Edit/5
@@ -79,15 +80,15 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdCartaoDeCredito,Validade,NumeroCartao,CodigoSeguranca,NomeCartao,Ativo,IdCliente,IdOperadoraCartao")] CartaoDeCredito cartaoDeCredito)
+        public ActionResult Edit([Bind(Include = "IdCartaoDeCredito,Validade,NumeroCartao,CodigoSeguranca,NomeCartao,Ativo,Id,IdOperadoraCartao")] CartaoDeCredito CartaoDeCredito)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cartaoDeCredito).State = EntityState.Modified;
+                db.Entry(CartaoDeCredito).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cartaoDeCredito);
+            return View(CartaoDeCredito);
         }
 
         // GET: CartoesDeCredito/Delete/5
@@ -97,12 +98,12 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CartaoDeCredito cartaoDeCredito = db.CartoesDeCredito.Find(id);
-            if (cartaoDeCredito == null)
+            CartaoDeCredito CartaoDeCredito = db.CartoesDeCredito.Find(id);
+            if (CartaoDeCredito == null)
             {
                 return HttpNotFound();
             }
-            return View(cartaoDeCredito);
+            return View(CartaoDeCredito);
         }
 
         // POST: CartoesDeCredito/Delete/5
@@ -110,8 +111,8 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CartaoDeCredito cartaoDeCredito = db.CartoesDeCredito.Find(id);
-            db.CartoesDeCredito.Remove(cartaoDeCredito);
+            CartaoDeCredito CartaoDeCredito = db.CartoesDeCredito.Find(id);
+            db.CartoesDeCredito.Remove(CartaoDeCredito);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

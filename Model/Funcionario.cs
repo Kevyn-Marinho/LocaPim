@@ -10,10 +10,10 @@ namespace Model
     [Table("Funcionarios")]
     public class Funcionario : Pessoa
     {
-        [Key]
         public bool Usuario { get; set; }
-        public Cargo Cargo { get; set; }
+
+        [Required]
         public int IdCargo { get; set; }
-     
+        public Cargo Cargo { get; set; }
     }
 }

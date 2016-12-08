@@ -9,17 +9,11 @@ namespace Business
 {
     public class UsuarioCtl
     {
-        public Usuario Login(string nomeUsuario, string senha) 
+        public Usuario Login(Usuario usuario) 
         {
             //Hash hash = new Hash(SHA512.Create());
             //senha = hash.CriptografarSenha(senha);
             
-            Usuario usuario = new Usuario(nomeUsuario.ToUpper(), senha);
-            
-            usuario.Funcionario = new Funcionario();
-            usuario.Funcionario.Id = 0;
-            
-            usuario.NivelDeAcesso = 0;
             UsuarioDao dao = new UsuarioDao();
             
             usuario = dao.login(usuario);

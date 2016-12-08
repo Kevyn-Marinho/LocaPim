@@ -1,0 +1,32 @@
+﻿.dvProjeto {
+    width:15em;    
+    height:10em;
+    margin:0.25em;
+    border:0.15em solid;   
+    border-color:Green;
+    border-radius:5px;
+}
+.dvMasterEsquerda{
+    float:left; 
+    height:70%; 
+    width:25%;  
+    margin-top:20px;
+    margin-right:10px;
+}
+.dvCxMensagens{
+    border:1px solid rgba(133,133,133,0.7);
+    background-color:rgba(215,215,215,0.7);
+    border-radius:5px;
+}
+.dvCxMensagens-cabecalho{}
+#dvLoginEsquerda{
+}
+#imgLogin{
+    margin-left:7em;
+}
+.btn-adicionar {
+    float:right;
+}
+.form-modal{
+    margin:0 auto;
+}

@@ -47,8 +47,14 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Rg,Cpf,DataNascimento,Ativo,IdCliente,IdCarteiraDeMotorista")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Rg,Cpf,DataNascimento,Ativo,Id")] Cliente cliente,[Bind(Include = "Cnh, DataEmissao, Vencimento, Tipo")] CarteiraDeMotorista carteira)
         {
+
+            Business.CarteiraDeMotoristaController controller = new Business.CarteiraDeMotoristaController();
+            controller.incluir(carteira);
+            carteira = controller.BuscaCnh(carteira.Cnh);
+            cliente.CarteiraDeMotorista = carteira;
+
             if (ModelState.IsValid)
             {
                 db.Clientes.Add(cliente);
@@ -79,7 +85,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Sobrenome,Rg,Cpf,DataNascimento,Ativo,IdCliente,IdCarteiraDeMotorista")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Sobrenome,Rg,Cpf,DataNascimento,Ativo,Id,IdCarteiraDeMotorista")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {

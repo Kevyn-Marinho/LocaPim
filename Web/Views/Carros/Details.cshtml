@@ -1,9 +1,8 @@
 ﻿@model Model.Carro
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -17,11 +16,11 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Modelo.Nome)
+                @Html.DisplayNameFor(model => model.ModeloCarro.Nome)
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.Modelo.Nome)
+                @Html.DisplayFor(model => model.ModeloCarro.Nome)
             </dd>
     
             <dt>
@@ -81,11 +80,11 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.IdMarca)
+                @Html.DisplayNameFor(model => model.IdMarcaCarro)
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.IdMarca)
+                @Html.DisplayFor(model => model.IdMarcaCarro)
             </dd>
     
         </dl>

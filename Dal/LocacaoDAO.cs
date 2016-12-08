@@ -10,9 +10,9 @@ namespace Dao
     public class LocacaoDao : IDao<Locacao>
     {
         private EntidadesContext contexto;
-        public LocacaoDao()
+        public LocacaoDao(EntidadesContext contexto)
         {
-            this.contexto = new EntidadesContext();
+            this.contexto = contexto;
         }
 
         public void Adicionar(Locacao locacao)
@@ -34,5 +34,18 @@ namespace Dao
         {
             return contexto.Locacoes.ToList();
         }
+
+        public Locacao BuscaPorId(int id)
+        {
+            return contexto.Locacoes.Find(id);
+        }
+
+        public void Editar(int id, Locacao locacao)
+        {
+            Locacao locacaoAntinga = BuscaPorId(id);
+            locacaoAntinga = locacao;
+            SaveChanges();
+        }
+
     }
 }

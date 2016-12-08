@@ -1,9 +1,48 @@
-﻿
+﻿@model IEnumerable<Model.Locacao>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Locações em aberto</h2>
 
-    
+    <table class="table">
+    <tr>
+        <th>
+            Cliente
+        </th>
+        <th>
+            Data de Retirada
+        </th>
+        <th>
+            Placa
+        </th>
+        <th>
+            Valor
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRetirada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carro.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carro.Placa)
+            </td>
+            <td>
+                @Html.ActionLink("Devolver", "Devolucao", new { id = item.IdLocacao }) 
+            </td>
+        </tr>
+    }
+
+</table>

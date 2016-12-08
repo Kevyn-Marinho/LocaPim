@@ -1916,8 +1916,8 @@ var Microsoft;
                 this._bufferFullMessageSent = false;
                 this._config = config;
                 var bufferItems = this.getBuffer(SessionStorageSendBuffer.BUFFER_KEY);
-                var notDeliveredItems = this.getBuffer(SessionStorageSendBuffer.SENT_BUFFER_KEY);
-                this._buffer = bufferItems.concat(notDeliveredItems);
+                var notDeliverEditems = this.getBuffer(SessionStorageSendBuffer.SENT_BUFFER_KEY);
+                this._buffer = bufferItems.concat(notDeliverEditems);
                 if (this._buffer.length > SessionStorageSendBuffer.MAX_BUFFER_SIZE) {
                     this._buffer.length = SessionStorageSendBuffer.MAX_BUFFER_SIZE;
                 }

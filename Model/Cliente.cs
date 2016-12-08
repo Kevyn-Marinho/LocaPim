@@ -12,11 +12,10 @@ namespace Model
     {
         [Key]
         public int IdCliente{ get; set; }
-        public virtual CarteiraDeMotorista Carteira { get; set; }
+
+        [Required]
         public int IdCarteiraDeMotorista { get; set; }
-        public override string ToString() 
-        {
-            return String.Format("Cliente id:{0}, Nome:{1}, Rg:{2}", this.IdCliente,this.Nome,this.Rg);
-        }
+        public virtual CarteiraDeMotorista CarteiraDeMotorista { get; set; }
+
     }
 }

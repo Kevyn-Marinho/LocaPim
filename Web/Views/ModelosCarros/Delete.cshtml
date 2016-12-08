@@ -1,7 +1,7 @@
 ﻿@model Model.ModeloCarro
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -26,19 +26,19 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.IdMarca)
+                Marca
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.IdMarca)
+                @Html.DisplayFor(model => model.Marcas.Nome)
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.IdCategoria)
+                Categoria
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.IdCategoria)
+                @Html.DisplayFor(model => model.Categoria.Nome)
             </dd>
     
         </dl>

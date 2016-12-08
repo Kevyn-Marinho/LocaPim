@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class ContatoDao : IDao<Contato>
+    public class ContatoDao : IDao<Contato>
     {
         private EntidadesContext contexto;
 
@@ -25,6 +25,12 @@ namespace Dao
                 throw e;
             }
         }
+
+        public Contato BuscaPorId(int id)
+        {
+            return contexto.Contatos.FirstOrDefault( c => c.IdContato == id);
+        }
+
         public void SaveChanges()
         {
             try
@@ -47,6 +53,13 @@ namespace Dao
             {
                 throw e;
             }
+        }
+
+        public void Editar(int id, Contato contato)
+        {
+            Contato contatoAntigo = BuscaPorId(id);
+            contatoAntigo = contato;
+            SaveChanges();
         }
 
         public IList<Contato> Listar()

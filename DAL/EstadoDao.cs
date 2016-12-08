@@ -66,5 +66,32 @@ namespace Dao
             }
 
         }
+       
+        public Estado BuscaPorId(int id)
+        {
+            return contexto.Estado.FirstOrDefault(e => e.IdEstado == id);
+        }
+
+        public void Alterar(int IdEstadoAntigo, Estado estado)
+        {
+
+            try
+            {
+                Estado antigo = BuscaPorId(IdEstadoAntigo);
+                if (antigo == null)
+                {
+                    throw new Exception("Não foi possível localizar a Estado informado.");
+                }
+
+                antigo = estado;
+                contexto.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
     }
 }

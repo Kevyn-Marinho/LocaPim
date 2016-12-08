@@ -11,8 +11,14 @@ namespace Model
     public class Estado
     {   [Key]
         public int IdEstado { get; set; }
+
         public String Uf { get; set; }
+
         public String Sigla { get; set; }
-        public Pais Pais { get; set; }
+
+        [Required]
+        public int IdPais { get; set; }
+        public virtual Pais Pais { get; set; }
+
     }
 }

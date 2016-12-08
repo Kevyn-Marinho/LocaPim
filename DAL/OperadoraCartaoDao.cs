@@ -6,7 +6,7 @@ using Model;
 
 namespace Dao
 {
-    class OperadoraCartaoDao : IDao<OperadoraCartao>
+    public class OperadoraCartaoDao : IDao<OperadoraCartao>
     {
         private EntidadesContext contexto;
 
@@ -65,6 +65,29 @@ namespace Dao
                 throw e;
             }
 
+        }
+
+        public OperadoraCartao BuscaPorId(int id)
+        {
+            return contexto.OperadorasDeCredito.FirstOrDefault(u => u.IdOperadoraCarta == id);
+        }
+
+        public void Editar(int id, OperadoraCartao operadora)
+        {
+            try
+            {
+                OperadoraCartao antiga = contexto.OperadorasDeCredito.Find(id);
+                if(antiga == null)
+                {
+                    throw new Exception("Não foi possível localizar a operadora informada");
+                }
+
+                antiga = operadora;
+                SaveChanges();
+            }catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

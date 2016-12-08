@@ -47,15 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarroCtl.cs" />
     <Compile Include="CargoCtl.cs" />
-    <Compile Include="ClienteCtl.cs" />
-    <Compile Include="FuncionarioCtl.cs" />
+    <Compile Include="CarroCtl.cs" />
+    <Compile Include="CarteiraDeMotoristaCtl.cs" />
+    <Compile Include="CartoesDeCreditoCtl.cs" />
+    <Compile Include="CategoriaCarrosCtl.cs" />
+    <Compile Include="CidadesCtl.cs" />
+    <Compile Include="ContatosCtl.cs" />
+    <Compile Include="EstadosCtl.cs" />
+    <Compile Include="FuncionariosCtl.cs" />
     <Compile Include="Hash.cs" />
-    <Compile Include="LocacaoCtl.cs" />
-    <Compile Include="PaisCtl.cs" />
+    <Compile Include="LocacoesCtl.cs" />
+    <Compile Include="MarcasCtl.cs" />
+    <Compile Include="ModelosCarrosCtl.cs" />
+    <Compile Include="OperadorasCartoesCtl.cs" />
+    <Compile Include="PaisesCtl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetorCtl.cs" />
+    <Compile Include="SetoresCtl.cs" />
+    <Compile Include="TiposDeContatosCtl.cs" />
     <Compile Include="UsuarioCtl.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,8 @@ namespace Model
     {
         [Key]
         public int IdTipoDeContato { get; set; }
+
         public string Descricao { get; set; }
+
     }
 }

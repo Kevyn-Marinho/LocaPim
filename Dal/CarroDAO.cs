@@ -10,6 +10,7 @@ namespace Dao
     public class CarroDao : IDao<Carro>
     {
         private EntidadesContext contexto;
+
         public CarroDao(EntidadesContext contexto)
         {
             this.contexto = contexto;
@@ -26,6 +27,11 @@ namespace Dao
             {
                 throw e;
             }
+        }
+
+        public Carro BuscaPorId(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void SaveChanges()
@@ -61,5 +67,16 @@ namespace Dao
                 throw e;
             }
         }
+
+        public void Alterar(Carro carroAntigo, Carro carro)
+        {
+            
+            if(carroAntigo != null)
+            {
+                carroAntigo = carro;
+                contexto.SaveChanges();
+            }
+        }
+
     }
 }
