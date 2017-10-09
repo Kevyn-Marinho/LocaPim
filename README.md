@@ -1,1 +1,1 @@
-# LocaPim é um projeto que visa realizar reservas de carros em locadoras de veíuclos e está sendo desenvolvido em plataforma .net.
+# LocaPim é um projeto que visa realizar reservas de carros em locadoras de veículos e está sendo desenvolvido em aspnet MVC.
